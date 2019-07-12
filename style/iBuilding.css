@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/*新增 协同ibms 样式*/
+.table-none > thead > tr > th, .table-none > tbody > tr > th, .table-none > tfoot > tr > th, .table-none > thead > tr > td, .table-none > tbody > tr > td, .table-none > tfoot > tr > td{ border:none; white-space:nowrap; font-weight:400;}
+.fixed{ table-layout:fixed; margin-top:10px; margin-bottom:10px;  }
+.no-bms{ margin-bottom:-3px; margin-top:7px; display:inline-block;}
+
+.bmsbox{  border:#ccc solid 1px; border-radius:6px;position:relative;  display:table; margin:0px; margin-top:15px; margin-bottom:21px;  padding:0px 15px;   }
+.bmsbox h1.bmsbox-title{ font-size:15px; position:absolute; top:-9px; padding:0 7px; left:14px; margin:0px; background:url(../images/box-title.jpg) repeat; display:block; margin-left:-2px;}
+.bmsbox div.bmsbox-con{ position:relative;}
+.bmsbox label{ font-weight:400;line-height:31px; vertical-align:bottom;}
+.bmsbox div{ line-height:31px;}
+label.text-right{  margin:0px; padding-right:0px; padding-left:0px; white-space:normal; word-break:break-all; word-wrap:break-word;}
+.bmsbox-sm .fixed{ margin-top:11px;}
+.bmsbox-sm{ position:relative; border:#dedede solid 1px; margin-top:21px; margin-bottom:15px;  padding:0px 10px;  }
+.bmsbox h1.title-sm{ font-size:12px;top:-8px; left:10px; }
+.bmsbox-sm .radio-inline{ padding-left:0px;}
+.text-input span{  padding-right:7px; display:block; line-height:31px; margin-left:7px; } 
+.form-text{ width:auto; float:left;}
+.bmsbox-input{ margin-top:11px; margin-bottom:7px;}
+.bmsbox-sm .row-line{ margin-top:10px; margin-bottom:-8px; overflow:hidden; }
+.bmsbox-check-line{ margin-top:6px; margin-bottom:23px; }
+.bmsbox-sm-notitle{ margin-top:0px;}
+
+/*新增 协ibms同 样式  v2*/
+.clear{ clear:both;}
+.head_title{ margin-top:13px; margin-bottom:13px; font-size:18px;}
+.con-header{ clear:both;  margin-top:15px; }
+.con-header span{ float:left; font-size:16px; line-height:2; display:block; margin-left:7px;}
+.bmsbox-select {margin-top:7px;  }
+.bmsbox-select .form-control{ float:left; display:inline; margin-left:15px; width:200px; vertical-align:bottom;}
+.function_btn { margin-top:7px; }
+
+/*新增 协ibms同 样式 v3*/
+
+.left-ztree-title{ font-size:16px; padding-bottom:13px;  }
+.button-row{  border-bottom:#dedede solid 1px; padding-bottom:15px; }
+.out_title{ font-size:16px; padding-top:11px; }
+.out-row{ margin-bottom:0px; margin-top:4px;}
+.out-row label{ padding-left:35px;}
+.out-row label span{ vertical-align:bottom;}
+#mouthday{ white-space:normal;}
+#mouthday label{ width:60px;}
+
+.check_inline{ white-space:nowrap; word-break:keep-all; overflow:hidden;}
+.success{ color:#5cb85c; display:inline-block;}
+.success i{ transition:all 0.3s linear; transform:scale(1.0)}
+.success:hover{color:#5cb85c;}
+.success:hover i{ transform:scale(1.3) }
+.danger{ color:#d9534f;display:inline-block;}
+.danger i{ transition:all 0.3s linear; transform:scale(1.0) }
+.danger:hover{ color:#d9534f}
+.danger:hover i{  transform:scale(1.3) }
+.bms-btnzone{ margin-top:-6px;margin-bottom:15px;}
+
+
+.changebox td{ text-align:left;}
+.changebox td .icheck-label{ margin:0px; padding:0px; padding-right:7px;}
+#mounthth .label:first{ margin-left:0px;}
+
+/****/
+.required-group{ position: relative;}
+ 
+.required-group .requ{position:absolute;   color:#FF3300 ; font-size:14px; right:-14px; line-height: 31px;}
+
+/****/
+.ztree-btn{margin-bottom:15px;margin-left:0px;}
+.ztree-btn > button.btn{ padding:4px 12px !important;  }
+.ztree-btn .btn-mini .btn-text{
+    display:none;
+    -webkit-transition:all 0.3s linear;
+    transition:all 0.3s linear;
+    
+	
+
+	
+	 }
+	 
+	 .ztree-btn .btn-mini:hover .btn-text{display:inline-block;  transition:all 0.3s linear ; }
+
+
+
+
+
+ 
+.required-group .requ{position:absolute;   color:#FF3300 ; font-size:14px; right:-9px; line-height: 31px;}
+ 

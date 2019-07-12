@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			.container-fluid {
+				background: #fff;
+				padding: 15px;
+				border-radius: 6px;
+			}
+			
+			.col-md-2{padding-top: 0px;}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="container-fluid  animated fadeInDown">
+
+			<div class="col-md-2" >
+				<ul id="zTree" class="ztree">
+				</ul>
+			</div>
+
+			<div class="col-md-10" id='calendar'></div>
+
+			<div style='clear:both'></div>
+
+		</div>
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<!--calender -->
+		<link href='Plugin/fullcalendar/fullcalendar.css' rel='stylesheet' />
+		<link href='Plugin/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+		<script src='Plugin/fullcalendar/lib/moment.min.js'></script>
+		<script src='Plugin/fullcalendar/lib/jquery.min.js'></script>
+		<script src='Plugin/fullcalendar/lib/jquery-ui.custom.min.js'></script>
+		<script src='Plugin/fullcalendar/fullcalendar.min.js'></script>
+		<script src='Plugin/fullcalendar/lang-all.js'></script>
+		<script>
+			$(document).ready(function() {
+				$('#external-events .label').each(function() {
+					// store data so the calendar knows to render an event upon drop
+					$(this).data('event', {
+						title: $.trim($(this).text()), // use the element's text as the event title
+						stick: true // maintain when user navigates (see docs on the renderEvent method)
+					});
+					// make the event draggable using jQuery UI
+					$(this).draggable({
+						zIndex: 999,
+						revert: true, // will cause the event to go back to its
+						revertDuration: 0 //  original position after the drag
+					});
+				});
+				$('#calendar').fullCalendar({
+					header: {
+						left: 'prev,next today',
+						center: 'title',
+						right: 'month,agendaWeek,agendaDay'
+					},
+					editable: true,
+					lang: 'zh-cn',
+					droppable: true, // this allows things to be dropped onto the calendar
+					events: [{
+						title: '月初计划',
+						start: '2016-03-01'
+					}, {
+						title: '长事件',
+						start: '2016-03-07',
+						end: '2016-03-10',
+						backgroundColor: '#94cad0',
+						borderColor: '#94cad0'
+					}, {
+						id: 999,
+						title: '部门会议',
+						start: '2016-03-09T16:00:00',
+						backgroundColor: '#94cad0',
+						borderColor: '#94cad0'
+					}, {
+						title: '安全检查',
+						start: '2016-03-11',
+						end: '2016-03-13',
+						backgroundColor: '#f0ad4e',
+						borderColor: '#f0ad4e'
+					}, {
+						title: '会议',
+						start: '2016-03-12T10:30:00',
+						end: '2016-03-12T12:30:00'
+					}, {
+						title: '午餐',
+						start: '2016-03-12T12:00:00'
+					}, {
+						title: '参观',
+						start: '2016-03-12T17:30:00'
+					}, {
+						title: '晚饭',
+						start: '2016-03-12T20:00:00'
+					}, {
+						title: '工作总结',
+						start: '2016-03-30',
+						backgroundColor: '#d9534f',
+						borderColor: '#d9534f'
+					}, {
+						title: '例行工作',
+						start: '2016-03-16',
+						end: '2016-03-21',
+						backgroundColor: '#5cb85c',
+						borderColor: '#5cb85c'
+					}, ]
+				});
+			});
+		</script>
+		<!--ztree-->
+		<link rel="stylesheet" type="text/css" href="Plugin/ztree/3.5/css/zTreeStyle/zTreeStyle.css" />
+		<script src="Plugin/ztree/3.5/js/jquery.ztree.all.min.js" type="text/javascript"></script>
+		<SCRIPT type="text/javascript">
+			<!--
+			var setting = {
+				data: {
+					simpleData: {
+						enable: true
+					}
+				}
+			};
+			var zNodes = [{
+				"id": "0",
+				"pId": "-1",
+				"name": "组织机构根节点",
+				"classification": "null",
+				"isThirdParty": "null",
+				"treeSort": "null",
+				"nocheck": "false",
+				"open": true
+			}, {
+				"id": "d658e893eb0d4d65926adb4ee5cf4995",
+				"pId": "0",
+				"name": "西安协同时光软件",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "0",
+				"nocheck": "false",
+				"open": true
+
+			}, {
+				"id": "525a9d4e88ed4ceeb0e4b6b3827c7f3a",
+				"pId": "f82109b66f824314a4500e101398d0d0",
+				"name": "测试B",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "2",
+				"nocheck": "false"
+			}, {
+				"id": "75e8c3305dcc4d11aa68792c1e6951e3",
+				"pId": "a0678dca56c840f3a8d91f21bfa9dc27",
+				"name": "222",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "2",
+				"nocheck": "false"
+			}, {
+				"id": "c15c1f4816154ed599e673a98c004807",
+				"pId": "4d91f9259108473c83db94a80ab7b491",
+				"name": "测试1",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "2",
+				"nocheck": "false"
+			}, {
+				"id": "11327e2f543d4289a589b3efdfd45fda",
+				"pId": "d658e893eb0d4d65926adb4ee5cf4995",
+				"name": "BPM事业部",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "2",
+				"nocheck": "false"
+			}, {
+				"id": "92dfe957234c4b50af53cc02da128872",
+				"pId": "3f252345c6a04f678da14e1ddda2f803",
+				"name": "人事部",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "3",
+				"nocheck": "false"
+			}, {
+				"id": "de11ebc038ff420ebbc04f79a4181a10",
+				"pId": "a0678dca56c840f3a8d91f21bfa9dc27",
+				"name": "555",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "3",
+				"nocheck": "false"
+			}, {
+				"id": "898b0708534c4586b3f848e51faeb11b",
+				"pId": "d658e893eb0d4d65926adb4ee5cf4995",
+				"name": "IBMS事业部",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "3",
+				"nocheck": "false"
+			}, {
+				"id": "a48e9f22fa55485ea261aa770cd5e10a",
+				"pId": "11327e2f543d4289a589b3efdfd45fda",
+				"name": "销售部",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "3",
+				"nocheck": "false"
+			}, {
+				"id": "e0a9b9d3bc3440e0bbbb044851b4eb27",
+				"pId": "0",
+				"name": "易华录",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "3",
+				"nocheck": "false"
+			}, {
+				"id": "eae8a3226a2f4f4a885ddf479d8e194e",
+				"pId": "bfb3c425ea8d4bee99f8bf8158f0c2de",
+				"name": "陕西宏星电器",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "3",
+				"nocheck": "false"
+			}, {
+				"id": "6fa585c7e7fe426989f3a54a06267d3e",
+				"pId": "4d91f9259108473c83db94a80ab7b491",
+				"name": "保障部",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "3",
+				"nocheck": "false"
+			}, {
+				"id": "805dbbd0340a474b81fe5a179cb4f87a",
+				"pId": "11327e2f543d4289a589b3efdfd45fda",
+				"name": "部门一",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "4",
+				"nocheck": "false"
+			}, {
+				"id": "e4e57a4f0f544115a6d6891a7855b994",
+				"pId": "d658e893eb0d4d65926adb4ee5cf4995",
+				"name": "行政人事部",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "4",
+				"nocheck": "false"
+		
+			}, {
+				"id": "e3b48fb4797b4f80b18f1aca92ed73e8",
+				"pId": "0",
+				"name": "组织机构测试0519",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "31",
+				"nocheck": "false"
+			}, {
+				"id": "3f252345c6a04f678da14e1ddda2f803",
+				"pId": "0",
+				"name": "协同科技",
+				"classification": "org",
+				"isThirdParty": "null",
+				"treeSort": "32",
+				"nocheck": "false"
+			}];
+			$(document).ready(function() {
+				$.fn.zTree.init($("#zTree"), setting, zNodes);
+			});
+			//-->
+		</SCRIPT>
+	</body>
+
+</html>

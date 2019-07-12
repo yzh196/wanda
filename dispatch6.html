@@ -1,0 +1,605 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<link rel="stylesheet" type="text/css" href="style/iBuilding.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<div class="container-fluid animated fadeInDown">
+			<div class="row row-title">
+				<div class="pull-left">
+					<label class="label label-lg label-primary"><i class="fa fa-user animated"></i> <a href="javascript::">时间表配置</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="dispatch2.html">时间表任务监控</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="dispatch3.html">联动配置</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="dispatch4.html">联动任务监控</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="javascript::">模式管理</a></label>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="ztreebox">
+				<div class="row ztree-btn">
+			  <button  alert="添加任务" class="btn btn-default btn-mini" type="button"> <a href="dispatch1.html"><i class="fa fa-plus"></i> <span class="btn-text">添加任务</span> </a></button>
+		      <button   alert="添加动作" class="btn btn-default btn-mini" type="button"> <a href="dispatch5.html"><i class="fa fa-angle-double-right"></i> <span class="btn-text">添加单个动作</span></</a> </button>
+		      <button  alert="添加多个" class="btn btn-default btn-mini" type="button"> <a href="dispatch6.html"><i class="fa fa-align-left"></i> <span class="btn-text">添加多个动作</span></a></button>
+		    </div>
+				<div class="zTreeDemoBackground mCustomScrollbar">
+					<ul id="zTree" class="ztree">
+					</ul>
+				</div>
+			</div>
+			<div class="ztree-content">
+				<div class="row">
+					<ul id="myTab" class="nav nav-tabs">
+						<li class="active">
+							<a href="#mg2" data-toggle="tab">联动配置-添加多个动作</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane  active" id="mg2">
+							<div class="tablebox clearfix">
+								<!-- table start -->
+
+								<div class="tablebox-con">
+
+									<div class="row  tablebox-title">
+										<div class="col-sm-9 tablebox-title-left">
+											<div class="row">
+												<div class="col-sm-3">
+													<select class="form-control" onchange="onChangeSystem(this);" name="filter_EQ_subsystemId">
+														<option value="-1">全部</option>
+
+														<option value="1">广播 </option>
+
+														<option value="2">防盗 </option>
+
+														<option value="3">楼控 </option>
+
+														<option value="4">消防 </option>
+
+													</select>
+												</div>
+												<div class="col-sm-3">
+													<select class="form-control" id="driverSelect" name="filter_EQ_deviceId">
+														<option value="-1">全部</option>
+
+													</select>
+												</div>
+												<div class="col-sm-3">
+													<select class="form-control" name="filter_EQ_type">
+														<option value="-1">全部</option>
+														<option value="0">开关量 </option>
+														<option value="1">整型量 </option>
+														<option value="2">浮点量 </option>
+														<option value="3">消息量 </option>
+													</select>
+												</div>
+												<div class="col-sm-3">
+													<button type="button" onclick="search()" class="btn btn-default btn-sm"><i class="icon-search"></i>查询</button>
+												</div>
+												<!-- /input-group -->
+											</div>
+										</div>
+										<div class="col-sm-3" >
+											<div class="  pull-right">
+												<button type="button" class="btn   btn-success  btn-sm  " onclick="saveManyAction('38');"><i class="icon-plus"></i> 保存</button>
+											</div>
+										</div>
+									</div>
+
+									<table class="table table-striped table-bordered table-hover table-condensed dataTablesHead">
+										<thead>
+											<tr>
+												<th width="30px">
+													<div class="icheckbox_minimal-grey icheck-item icheck[n8hge]">
+														<input type="checkbox" class="icheck-input icheck[n8hge]" id="chk" name="chk" onchange="selectAllChk(this);">
+													</div>
+												</th>
+												<th width="15%" sort="subsystemId">子系统<i class="icon-sort pull-right pointer-gray"></i></th>
+												<th width="25%" sort="deviceId">设备 <i class="icon-sort pull-right pointer-gray"></i></th>
+												<th width="25%" sort="name">变量名称<i class="icon-sort-down pull-right pointer-blue"></i></th>
+												<th width="20%">动作名称</th>
+												<th width="15%">动作变量</th>
+											</tr>
+										</thead>
+
+										<tbody>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[xpf5f]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[xpf5f]" name="id" value="50462723">
+													</div>
+													<input type="hidden" name="type" value="0">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">送排风机</td>
+												<td width="25%">b1-4启停控制</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="18" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<div class="icheckbox_minimal-grey icheck-item icheck[xqdcq]">
+														<input name="tagValue" value="1" type="checkbox" class="icheck-input icheck[xqdcq]">
+													</div>
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[5g49u]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[5g49u]" name="id" value="50462728">
+													</div>
+													<input type="hidden" name="type" value="0">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">送排风机</td>
+												<td width="25%">b1-2排风机启停控制</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="48" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<div class="icheckbox_minimal-grey icheck-item icheck[f5id2]">
+														<input name="tagValue" value="1" type="checkbox" class="icheck-input icheck[f5id2]">
+													</div>
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[7h1ap]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[7h1ap]" name="id" value="33619977">
+													</div>
+													<input type="hidden" name="type" value="0">
+												</td>
+												<td width="15%">防盗</td>
+												<td width="25%">设备1</td>
+												<td width="25%">复位</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="18" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<div class="icheckbox_minimal-grey icheck-item icheck[wj0g7]">
+														<input name="tagValue" value="1" type="checkbox" class="icheck-input icheck[wj0g7]">
+													</div>
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[sfnw6]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[sfnw6]" name="id" value="50593801">
+													</div>
+													<input type="hidden" name="type" value="0">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">空调</td>
+												<td width="25%">b1-1送风机手/自动状态</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="108" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<div class="icheckbox_minimal-grey icheck-item icheck[z37ux]">
+														<input name="tagValue" value="1" type="checkbox" class="icheck-input icheck[z37ux]">
+													</div>
+
+												</td>
+											</tr>
+
+											
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[xmgvl]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[xmgvl]" name="id" value="50462732">
+													</div>
+													<input type="hidden" name="type" value="0">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">送排风机</td>
+												<td width="25%">1b-1风机启/停控制</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="72" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<div class="icheckbox_minimal-grey icheck-item icheck[tk1et]">
+														<input name="tagValue" value="1" type="checkbox" class="icheck-input icheck[tk1et]">
+													</div>
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[0kqu6]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[0kqu6]" name="id" value="50593804">
+													</div>
+													<input type="hidden" name="type" value="2">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">空调</td>
+												<td width="25%">b1-1盘管冷热水阀调节</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="144" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<input type="text" name="tagValue" value="" style="width: 100%;border:0" class="validate[min[],max[]]">
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[rthpk]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[rthpk]" name="id" value="50593805">
+													</div>
+													<input type="hidden" name="type" value="2">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">空调</td>
+												<td width="25%">b1-1盘管预热水阀调节</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="156" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<input type="text" name="tagValue" value="" style="width: 100%;border:0" class="validate[min[],max[]]">
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[u1eau]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[u1eau]" name="id" value="50593806">
+													</div>
+													<input type="hidden" name="type" value="2">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">空调</td>
+												<td width="25%">b1-1回风阀控制</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="168" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<input type="text" name="tagValue" value="" style="width: 100%;border:0" class="validate[min[],max[]]">
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[x1vbh]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[x1vbh]" name="id" value="50593807">
+													</div>
+													<input type="hidden" name="type" value="2">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">空调</td>
+												<td width="25%">b1-1新风阀控制</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="180" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<input type="text" name="tagValue" value="" style="width: 100%;border:0" class="validate[min[],max[]]">
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[btgg3]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[btgg3]" name="id" value="50462736">
+													</div>
+													<input type="hidden" name="type" value="0">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">送排风机</td>
+												<td width="25%">1b-2排风机启停控制</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="96" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<div class="icheckbox_minimal-grey icheck-item icheck[h3xqt]">
+														<input name="tagValue" value="1" type="checkbox" class="icheck-input icheck[h3xqt]">
+													</div>
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[36rt1]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[36rt1]" name="id" value="50397201">
+													</div>
+													<input type="hidden" name="type" value="0">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">照明</td>
+												<td width="25%">B1-1-3-1kz</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="51" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<div class="icheckbox_minimal-grey icheck-item icheck[1gn2c]">
+														<input name="tagValue" value="1" type="checkbox" class="icheck-input icheck[1gn2c]">
+													</div>
+
+												</td>
+											</tr>
+
+											<tr class="">
+												<td width="30">
+													<div class="icheckbox_minimal-grey icheck-item icheck[dulm7]">
+														<input type="checkbox" class="checkboxes icheck-input icheck[dulm7]" name="id" value="50397202">
+													</div>
+													<input type="hidden" name="type" value="0">
+												</td>
+												<td width="15%">楼控</td>
+												<td width="25%">照明</td>
+												<td width="25%">B1-1-3-2kz</td>
+												<td width="20%">
+													<input type="text" name="actionName" value="54" class="validate[maxSize[6]]" style="width: 100%;border:0">
+												</td>
+
+												<td width="15%">
+
+													<div class="icheckbox_minimal-grey icheck-item icheck[awke5]">
+														<input name="tagValue" value="1" type="checkbox" class="icheck-input icheck[awke5]">
+													</div>
+
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+
+									<div class="row workPageFoot">
+										<div class="col-xs-6">
+											共有
+											<code>377</code> 条记录，每页
+											<select id="pageSize" name="pageSize" onchange="jumpPage('1')" class="input-sm">
+
+												<option value="1">1</option>
+
+												<option value="12">12</option>
+
+												<option value="15" selected="">15</option>
+
+												<option value="20">20</option>
+
+												<option value="30">30</option>
+
+												<option value="50">50</option>
+
+												<option value="100">100</option>
+
+												<option value="200">200</option>
+
+											</select> 条
+											<input id="sortField" name="sortField" type="hidden" value="name">
+											<input id="sortDir" name="sortDir" type="hidden" value="desc">
+											<input id="pageNumber" name="pageNumber" type="hidden" value="">
+											<input id="_searchFlag" name="_searchFlag" type="hidden" value="_searchFlag">
+										</div>
+
+										<div class="col-xs-6">
+											<ul class="list-inline pull-right">
+
+												<li> <a href="javascript:void(0);">首页</a> </li>
+												<li> <a href="javascript:void(0);">上页</a> </li>
+
+												<li> <a href="javascript:jumpPage('2');">下页</a> </li>
+												<li> <a href="javascript:jumpPage('26');">末页</a> </li>
+
+												<li>跳到
+													<select id="gopage" name="gopage" class="input-sm" onchange="go();">
+
+														<option value="1" selected="">1/26</option>
+
+														<option value="2">2/26</option>
+
+														<option value="3">3/26</option>
+
+														<option value="4">4/26</option>
+
+														<option value="5">5/26</option>
+
+														<option value="6">6/26</option>
+
+														<option value="7">7/26</option>
+
+														<option value="8">8/26</option>
+
+														<option value="9">9/26</option>
+
+														<option value="10">10/26</option>
+
+														<option value="11">11/26</option>
+
+														<option value="12">12/26</option>
+
+														<option value="13">13/26</option>
+
+														<option value="14">14/26</option>
+
+														<option value="15">15/26</option>
+
+														<option value="16">16/26</option>
+
+														<option value="17">17/26</option>
+
+														<option value="18">18/26</option>
+
+														<option value="19">19/26</option>
+
+														<option value="20">20/26</option>
+
+														<option value="21">21/26</option>
+
+														<option value="22">22/26</option>
+
+														<option value="23">23/26</option>
+
+														<option value="24">24/26</option>
+
+														<option value="25">25/26</option>
+
+														<option value="26">26/26</option>
+
+													</select> 页
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<!--ztree-->
+		<link rel="stylesheet" type="text/css" href="Plugin/ztree/3.5/css/zTreeStyle/zTreeStyle.css" />
+		<script src="Plugin/ztree/3.5/js/jquery.ztree.all.min.js" type="text/javascript"></script>
+		<SCRIPT type="text/javascript">
+			<!--
+			var setting = {
+				data: {
+					simpleData: {
+						enable: true
+					}
+				}
+			};
+			var zNodes = [{
+				"id": "35",
+				"name": "防盗报警10联动开灯",
+				"pId": "-1",
+				"type": "task",
+				"isParent": "false"
+			}, {
+				"id": "36",
+				"name": "防盗报警11联动开灯",
+				"pId": "-2",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "37",
+				"name": "防盗报警12联动开灯",
+				"pId": "-3",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "38",
+				"name": "防盗报警13联动开灯",
+				"pId": "-4",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "39",
+				"name": "防盗报警14联动开灯",
+				"pId": "-5",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "40",
+				"name": "防盗报警15联动开灯",
+				"pId": "-6",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "41",
+				"name": "防盗报警16联动开灯",
+				"pId": "-7",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "42",
+				"name": "防盗报警17联动开灯",
+				"pId": "-8",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "43",
+				"name": "消防报警B1F联动风机",
+				"pId": "-9",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "44",
+				"name": "消防报警1F联动风机",
+				"pId": "-10",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "45",
+				"name": "消防报警5F联动风机",
+				"pId": "-11",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "46",
+				"name": "消防报警6F联动风机",
+				"pId": "-12",
+				"type": "task",
+				"isParent": "false"
+			}];
+			$(document).ready(function() {
+				$.fn.zTree.init($("#zTree"), setting, zNodes);
+			});
+			//-->
+		</SCRIPT>
+
+		<!--datetime-->
+		<link rel="stylesheet" type="text/css" href="Plugin/bootstrap-datepicker/css/bootstrap-datetimepicker.min.css" />
+		<script src="Plugin/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+		<script src="Plugin/bootstrap-datepicker/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+	</body>
+
+</html>

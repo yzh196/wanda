@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<div class="container-fluid  animated fadeInDown">
+
+			<div class="row row-title">
+				<div class="pull-left">
+					<a href="alarm.html" class="label label-md label-info "><i class="fa fa-calendar animated"></i> 实时报警</a>
+					<a href="his-alarm.html" class="label label-md label-default"><i class="fa fa-clock-o animated"></i> 历史报警</a>
+					<a href="self-alarm.html" class="label label-md label-default"><i class="fa fa-pencil	 animated"></i> 报警定义</a>
+					<a href="turn-alarm.html" class="label label-md label-default"><i class="fa fa-mail-reply	 animated"></i> 报警跳转</a>
+				</div>
+				<div class="pull-right">
+					<div class="info-zone">
+						<label class="label label-md label-no ">严重报警 <span class="danger">8</span></label>
+						<label class="label label-md label-no">普通报警 <span class="info">8</span></label>
+						<label class="label label-md label-no">一般报警 <span class="info">8</span></label>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="table-box">
+				<div class="table-title">
+					<div class="pull-left">
+						<div class="title-icon">
+						<i class="fa fa-list-alt"></i>
+						<i class="fa fa-chevron-circle-up"></i>
+						</div>
+						<h1>设备报警列表</h1>
+						<label class="label label-default label-radius">已处理 <span>3</span></label>
+						<label class="label label-warning label-radius">未处理 <span>2</span></label>
+					</div>
+					<div class="pull-right">
+						<form action="" class="form-inline" method="post">
+							<div class="form-group">
+								<label> 报警级别:</label>
+								<input type="text" class="form-control input-sm" list="type" placeholder="请选择级别"  />
+								<datalist id="type">
+									<option value="严重报警"></option>
+									<option value="普通报警"></option>
+									<option value="一般报警"></option>
+								</datalist>
+								<label> 子系统:</label>
+								<input type="text" class="form-control input-sm" list="type2" placeholder="请选择报警系统"  />
+								<datalist id="type2">
+									<option value="烟感系统"></option>
+									<option value="节能系统"></option>
+									<option value="监控系统"></option>
+								</datalist>
+								<button class="btn btn-info btn-sm">导出</button>
+							</div>							
+						</form>						
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<table class="table table-bordered table-hover table-striped" >
+					<tr>
+						<th width="100" class="text-center">报警时间</th>
+						<th width="70" class="text-center">报警级别</th>
+						<th>报警描述</th>
+						<th>子系统</th>
+						<th>设备</th>
+						
+						<th>位置</th>
+						<th width="70" class="text-center">报警点</th>
+						<th width="70" class="text-center">详细信息</th>
+						<th width="80" class="text-center">报警处理</th>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center"><span class="danger">高-严重</span></td>
+						<td><span class="danger" data-toggle='modal' data-target='#tableplane'>点击弹窗</span></td>
+						<td>暖通空调</td>
+						<td>1号冷机</td>
+						
+						<td>地下二层制冷机房</td>
+						<td class="text-center"><span class="gblue">电子地图</span></td>
+						<td class="text-center"><span data-toggle='modal' data-target='#view'>查看</span></td>
+						<td class="text-center"><span data-toggle='modal' data-target='#detailed'>处理</span></td>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center">高-严重</td>
+						<td>冷水机高压保护</td>
+						<td>暖通空调</td>
+						<td>1号冷机</td>
+						
+						<td>地下二层制冷机房</td>
+						<td class="text-center">电子地图</td>
+						<td class="text-center">查看</td>
+						<td class="text-center">处理</td>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center">高-严重</td>
+						<td><span class="gblue">送风机维护</span></td>
+						<td >暖通空调</td>
+						<td>1号冷机</td>
+						
+						<td>地下二层制冷机房</td>
+						<td class="text-center">电子地图</td>
+						<td class="text-center">查看</td>
+						<td class="text-center">已处理</td>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center">高-严重</td>
+						<td><span class="gblue">送风机维护</span></td>
+						<td>暖通空调</td>
+						<td>1号冷机</td>
+						
+						<td>地下二层制冷机房</td>
+						<td class="text-center">电子地图</td>
+						<td class="text-center">查看</td>
+						<td class="text-center">已处理</td>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center">高-严重</td>
+						<td><span class="gblue">送风机维护</span></td>
+						<td>暖通空调</td>
+						<td>1号冷机</td>
+					
+						<td>地下二层制冷机房</td>
+						<td class="text-center">电子地图</td>
+						<td class="text-center">查看</td>
+						<td class="text-center"><span class="danger">未处理</span></td>
+					</tr>
+				</table>
+				<div class="tabl-footer">
+				  <ul class="list-inline pull-left">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <i class="fa fa-angle-double-left"></i>
+				      </a>
+				    </li>
+				    <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+				    <li><a href="#">Page</a></li>
+				    <li><input type="text" class="form-control input-sm" /></li>
+				    <li><a href="#">of 100</a></li>
+				    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+				    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+				  </ul>
+				  <div class="pull-right">共 <span>100</span> 条数据</div>
+					<div class="clearfix"></div>
+				</div>				
+			</div>
+
+			<div class="table-box  table-sencode">
+				<div class="table-title">
+					<div class="pull-left">
+						<div class="title-icon">
+						<i class="fa fa-list-alt"></i>
+						<i class="fa fa-chevron-circle-up"></i>
+						</div>
+						<h1>运行报警列表</h1>
+						<label class="label label-default label-radius">已处理 <span>3</span></label>
+						<label class="label label-warning label-radius">未处理 <span>2</span></label>
+					</div>
+					<div class="pull-right">
+						<form action="" class="form-inline" method="post">
+							<div class="form-group">
+								<label> 报警级别:</label>
+								<input type="text" class="form-control input-sm" list="type" placeholder="请选择级别"  />
+								<datalist id="type">
+									<option value="严重报警"></option>
+									<option value="普通报警"></option>
+									<option value="一般报警"></option>
+								</datalist>
+								<label> 子系统:</label>
+								<input type="text" class="form-control input-sm" list="type" placeholder="请选择报警系统"  />
+								<datalist id="type">
+									<option value="烟感系统"></option>
+									<option value="节能系统"></option>
+									<option value="监控系统"></option>
+								</datalist>
+								<button class="btn btn-info btn-sm">导出</button>
+							</div>							
+						</form>						
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<table class="table table-bordered table-hover table-striped" >
+					<tr>
+						<th width="100" class="text-center">报警时间</th>
+						<th width="70" class="text-center">报警级别</th>
+						<th>报警描述</th>
+						<th>子系统</th>
+						<th>设备</th>
+						<th width="50" class="text-center">楼层</th>
+						<th>位置</th>
+						<th width="70" class="text-center">报警点</th>
+						<th width="70" class="text-center">持续时间</th>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center"><span class="danger">高-严重</span></td>
+						<td><span class="danger" >冷水机高压保护</span></td>
+						<td>暖通空调</td>
+						<td>1号冷机</td>
+						<td class="text-center">F1</td>
+						<td>地下二层制冷机房</td>
+						<td class="text-center"><span class="gblue">电子地图</span></td>
+						<td class="text-center">5s</td>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center">高-严重</td>
+						<td>冷水机高压保护</td>
+						<td>暖通空调</td>
+						<td>1号冷机</td>
+						<td class="text-center">F1</td>
+						<td>地下二层制冷机房</td>
+						<td class="text-center">电子地图</td>
+						<td class="text-center">5s</td>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center">高-严重</td>
+						<td><span class="gblue">送风机维护</span></td>
+						<td>暖通空调</td>
+						<td>1号冷机</td>
+						<td class="text-center">F1</td>
+						<td>地下二层制冷机房</td>
+						<td class="text-center">电子地图</td>
+						<td class="text-center">5s</td>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center">高-严重</td>
+						<td><span class="gblue">送风机维护</span></td>
+						<td>暖通空调</td>
+						<td>1号冷机</td>
+						<td class="text-center">F1</td>
+						<td>地下二层制冷机房</td>
+						<td class="text-center">电子地图</td>
+						<td class="text-center">5s</td>
+					</tr>
+					<tr>
+						<td class="text-center">19:28:32</td>
+						<td class="text-center">高-严重</td>
+						<td><span class="gblue">送风机维护</span></td>
+						<td>暖通空调</td>
+						<td>1号冷机</td>
+						<td class="text-center">F1</td>
+						<td>地下二层制冷机房</td>
+						<td class="text-center">电子地图</td>
+						<td class="text-center">5s</td>
+					</tr>
+				</table>			
+				<div class="tabl-footer">
+				  <ul class="list-inline pull-left">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <i class="fa fa-angle-double-left"></i>
+				      </a>
+				    </li>
+				    <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+				    <li><a href="#">Page</a></li>
+				    <li><input type="text" class="form-control input-sm" /></li>
+				    <li><a href="#">of 100</a></li>
+				    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+				    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+				  </ul>
+				  <div class="pull-right">共 <span>100</span> 条数据</div>
+					<div class="clearfix"></div>
+				</div>				
+			</div>
+			
+		</div>
+
+		<div class="modal fade modal-info infowindow" id="tableplane" >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">设备报警详细页</h4>
+				</div>
+				<div class="modal-body">
+					<ul class="nav nav-pills" role="tablist">
+					    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">报警内容</a></li>
+					    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">可能原因</a></li>
+					    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">处理流程</a></li>
+					</ul>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home">
+							<table class="table">
+								<tr>
+									<td width="70">日期</td>
+									<td>2016-2-23</td>
+									<td width="60">子系统</td>
+									<td>设备管理</td>
+									<td width="70">位置</td>
+									<td>1层空调机房</td>
+								</tr>
+								<tr>
+									<td>报警时间</td>
+									<td>2016-2-23</td>
+									<td>设备</td>
+									<td>AUI-292</td>
+									<td>报警点</td>
+									<td>电子地图</td>
+								</tr>
+								<tr>
+									<td>报警描述</td>
+									<td>AUI送风机变频故障</td>
+									<td>楼层</td>
+									<td>F1</td>
+									<td>报警级别</td>
+									<td>离-严重</td>
+								</tr>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="profile">..22</div>
+						<div role="tabpanel" class="tab-pane" id="messages">.33.</div>
+					</div>
+				</div>
+				<div class="modal-footer" style="margin-top: -15px;">
+					<button type="button" class="btn btn-info btn-sm" >应答</button>
+					<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
+				</div>
+				<div class="pzbox">
+					<div class="row">
+						<h5>选择批注：</h5>
+					</div>
+					<div class="row" id="changelabel">
+						<div class="col-xs-4">
+							<label class="label label-default label-info label-block"><i class="fa fa-circle-o"></i>设备调试</label>
+						</div>
+						<div class="col-xs-4">
+							<label class="label label-default label-block"><i class="fa fa-circle"></i>真实故障</label>
+						</div>
+						<div class="col-xs-4">
+							<label class="label label-default label-block"><i class="fa fa-circle"></i>误报</label>
+						</div>
+						<div class="col-xs-4">
+							<label class="label label-default label-block"><i class="fa fa-circle"></i>其他</label>
+						</div>
+						<div class="col-xs-4">
+							<input type="text" class="form-control" placeholder="请输入批注" />
+						</div>
+
+					</div>
+				<div class="row">
+					<h5>选择压制时常：</h5>
+				</div>
+				<div class="row">
+					<div class="col-xs-4" style="padding-left: 0px;">
+						<select class="form-control">
+						<option value="1">1小时</option>
+						<option value="2">2小时</option>
+						<option value="3">3小时</option>
+						<option value="4">4小时</option>
+						<option value="5">5小时</option>
+					</select>
+					</div>					
+				</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info btn-sm" >提交</button>
+				</div>
+			</div>					
+		</div>
+		</div>	
+		
+		<div class="modal fade modal-info infowindow" id="view" >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">报警详细信息</h4>
+				</div>
+				<div class="modal-body">
+					<ul class="nav nav-pills" role="tablist">
+					   
+					</ul>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home">
+							<table class="table">
+								<tr>
+									<td width="70">日期</td>
+									<td>2016-2-23</td>
+									<td width="60">子系统</td>
+									<td>设备管理</td>
+									<td width="70">位置</td>
+									<td>1层空调机房</td>
+								</tr>
+								<tr>
+									<td>报警时间</td>
+									<td>2016-2-23</td>
+									<td>设备</td>
+									<td>AUI-292</td>
+									<td>报警点</td>
+									<td>电子地图</td>
+								</tr>
+								<tr>
+									<td>报警描述</td>
+									<td>AUI送风机变频故障</td>
+									<td>楼层</td>
+									<td>F1</td>
+									<td>报警级别</td>
+									<td>离-严重</td>
+								</tr>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="profile">..22</div>
+						<div role="tabpanel" class="tab-pane" id="messages">.33.</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info btn-sm" >确定</button>
+				</div>
+			</div>					
+		</div>
+		</div>
+		
+		
+		<div class="modal fade modal-info infowindow" id="detailed" >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">报警处理</h4>
+				</div>
+				<div class="modal-body">
+					
+					
+				
+
+				<div class="pzbox">
+					<div class="row">
+						<h5>选择批注：</h5>
+					</div>
+					<div class="row" id="changelabel">
+						<div class="col-xs-4">
+							<label class="label label-default label-info label-block"><i class="fa fa-circle-o"></i>设备调试</label>
+						</div>
+						<div class="col-xs-4">
+							<label class="label label-default label-block"><i class="fa fa-circle"></i>真实故障</label>
+						</div>
+						<div class="col-xs-4">
+							<label class="label label-default label-block"><i class="fa fa-circle"></i>误报</label>
+						</div>
+						<div class="col-xs-4">
+							<label class="label label-default label-block"><i class="fa fa-circle"></i>其他</label>
+						</div>
+						<div class="col-xs-4">
+							<input type="text" class="form-control" placeholder="请输入批注" />
+						</div>
+
+					</div>
+				<div class="row">
+					<h5>选择压制时常：</h5>
+				</div>
+				<div class="row">
+					<div class="col-xs-4" style="padding-left: 0px;">
+						<select class="form-control">
+						<option value="1">1小时</option>
+						<option value="2">2小时</option>
+						<option value="3">3小时</option>
+						<option value="4">4小时</option>
+						<option value="5">5小时</option>
+					</select>
+					</div>					
+				</div>
+				</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info btn-sm" >提交</button>
+				</div>
+			</div>					
+		</div>
+		</div>
+		
+									
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<script>
+			$("#changelabel>div>label").click(function() {
+				$("#changelabel>div>label").removeClass("label-info");
+				$("#changelabel>div>label>i").removeClass("fa-circle-o");
+				$("#changelabel>div>label>i").addClass("fa-circle");
+				$(this).addClass("label-info");
+				var icon= $(this).children("i");
+				icon.removeClass("fa-circle");
+				icon.addClass("fa-circle-o");						
+			});			
+		</script>
+	</body>
+
+</html>

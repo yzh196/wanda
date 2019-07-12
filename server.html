@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			
+		</style>
+
+	</head>
+
+	<body>
+		<div class="container-fluid  animated fadeInDown">
+
+			<div class="table-box">
+				<div class="table-title">
+					<div class="pull-left">
+						<div class="title-icon">
+						<i class="fa fa-list-alt"></i>
+						<i class="fa fa-chevron-circle-up"></i>
+						</div>
+						<h1>设备台账</h1>
+					</div>
+					<div class="pull-right">
+						<label class="label label-md label-success" data-toggle="modal" data-target="#addinfo"><i class="fa fa-plus animated"></i> 新增</label>
+					 <label class="label label-md label-info"><i class="fa fa-file-excel-o animated"></i> 导出成excel</label>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<table class="table table-bordered table-hover table-striped table-condensed tabel-fixed" >
+					<tr>
+						<th class="text-center">设备编码</th>
+						<th >设备名称</th>
+						<th >子系统</th>
+						<th >设备分类</th>
+						<th >位置</th>
+						<th >所属部门</th>
+						<th >状态</th>
+						<th >操作</th>
+						<th >详细信息</th>
+					</tr>
+					<tr>
+						<td class="text-center">EZ-8998-1</td>
+						<td>1号风机</td>
+						<td>暖通空调</td>
+						<td>新风机</td>
+						<td>B1</td>
+						<td>维修部</td>
+						<td>投用</td>
+						<td>
+							<a href="#" title="编辑">
+								<span class="label label-sm label-info"><i class="fa fa-pencil"></i></span>
+							</a>
+							<a href="#" title="删除">
+								<span class="label label-sm  label-danger"><i class="fa fa-trash"></i></span>
+							</a>
+						</td>
+						<td><a href="#">详细信息</a></td>
+					</tr>
+					<tr>
+						<td class="text-center">EZ-8998-2</td>
+						<td>2号风机</td>
+						<td>暖通空调</td>
+						<td>新风机</td>
+						<td>B1</td>
+						<td>维修部</td>
+						<td>投用</td>
+						<td>
+							<a href="#" title="编辑">
+								<span class="label label-sm label-info"><i class="fa fa-pencil"></i></span>
+							</a>
+							<a href="#" title="删除">
+								<span class="label label-sm  label-danger"><i class="fa fa-trash"></i></span>
+							</a>
+						</td>
+						<td><a href="#">详细信息</a></td>
+					</tr>
+					<tr>
+						<td class="text-center">EZ-8998-3</td>
+						<td>3号风机</td>
+						<td>暖通空调</td>
+						<td>新风机</td>
+						<td>B1</td>
+						<td>维修部</td>
+						<td>投用</td>
+						<td>
+							<a href="#" title="编辑">
+								<span class="label label-sm label-info"><i class="fa fa-pencil"></i></span>
+							</a>
+							<a href="#" title="删除">
+								<span class="label label-sm  label-danger"><i class="fa fa-trash"></i></span>
+							</a>
+						</td>
+						<td><a href="#">详细信息</a></td>
+					</tr>
+					<tr>
+						<td class="text-center">EZ-333-2</td>
+						<td>1号冷水机组</td>
+						<td>暖通空调</td>
+						<td>冷源</td>
+						<td>B2</td>
+						<td>维修部</td>
+						<td>投用</td>
+						<td>
+							<a href="#" title="编辑">
+								<span class="label label-sm label-info"><i class="fa fa-pencil"></i></span>
+							</a>
+							<a href="#" title="删除">
+								<span class="label label-sm  label-danger"><i class="fa fa-trash"></i></span>
+							</a>
+						</td>
+						<td><a href="#">详细信息</a></td>
+					</tr>
+					<tr>
+						<td class="text-center">EZ-89312-2</td>
+						<td>2号冷水机组</td>
+						<td>暖通空调</td>
+						<td>新风机</td>
+						<td>B1</td>
+						<td>维修部</td>
+						<td>投用</td>
+						<td>
+							<a href="#" title="编辑">
+								<span class="label label-sm label-info"><i class="fa fa-pencil"></i></span>
+							</a>
+							<a href="#" title="删除">
+								<span class="label label-sm  label-danger"><i class="fa fa-trash"></i></span>
+							</a>
+						</td>
+						<td><a href="#">详细信息</a></td>
+					</tr>
+					<tr>
+						<td class="text-center">EZ-8998-2</td>
+						<td>回路1</td>
+						<td>公共照明</td>
+						<td>照明</td>
+						<td>F1</td>
+						<td>商管部</td>
+						<td>投用</td>
+						<td>
+							<a href="#" title="编辑">
+								<span class="label label-sm label-info"><i class="fa fa-pencil"></i></span>
+							</a>
+							<a href="#" title="删除">
+								<span class="label label-sm  label-danger"><i class="fa fa-trash"></i></span>
+							</a>
+						</td>
+						<td><a href="#">详细信息</a></td>
+					</tr>
+					
+				</table>
+				<div class="tabl-footer">
+				  <ul class="list-inline pull-left">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <i class="fa fa-angle-double-left"></i>
+				      </a>
+				    </li>
+				    <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+				    <li><a href="#">Page</a></li>
+				    <li><input type="text" class="form-control input-sm" /></li>
+				    <li><a href="#">of 100</a></li>
+				    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+				    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+				  </ul>
+				  <div class="pull-right">共 <span>100</span> 条数据</div>
+					<div class="clearfix"></div>
+				</div>				
+			</div>
+			
+		</div>
+				
+		<div class="modal fade" id="addinfo">
+			<div class="modal-dialog" >
+				<div class="modal-content modal-nav">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h5 class="modal-title">
+							 <ul class="nav nav-tabs" role="tablist">
+							    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">单个添加</a></li>
+							    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">批量添加</a></li>
+							 </ul>						
+						</h4>
+					</div>
+					
+					
+					<div class="modal-body">
+						
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="home">
+								<form action="#" class="form-horizontal" >
+									<div class="form-group">
+								<label class="col-sm-3 control-label">设备编码</label>
+								<div class="col-sm-9">								
+									<input type="email" class="form-control" autofocus="autofocus"   placeholder="请输入设备编码">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">设备名称</label>
+								<div class="col-sm-9">								
+									<input type="email" class="form-control"  placeholder="请输入设备名称">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">子系统</label>
+								<div class="col-sm-9">								
+									<select name="" class="form-control">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">设备分类</label>
+								<div class="col-sm-9">								
+									<select name="" class="form-control">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">位置</label>
+								<div class="col-sm-9">								
+									<input type="email" class="form-control"  placeholder="请输入区域位置">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">所属部门</label>
+								<div class="col-sm-9">								
+									<input type="email" class="form-control"  placeholder="请输入组织机构">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">状态</label>
+								<div class="col-sm-9">								
+									<select name="" class="form-control">
+										<option value="1">投用</option>
+										<option value="2">停用</option>
+										<option value="3">闲置</option>
+										<option value="4">故障</option>
+										<option value="5">报废</option>
+										<option value="6">封存</option>
+									</select>
+								</div>
+							</div>
+									
+									
+								</form>	
+							</div>
+							<div role="tabpanel" class="tab-pane" id="profile">
+								
+								<form action="#" class="form-horizontal" >
+									<div class="form-group">
+								<label class="col-sm-3 control-label">请选择子系统</label>
+								<div class="col-sm-9">								
+									<select name="" class="form-control">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">设备列表</label>
+								<div class="col-sm-9">								
+									<div class="linebox mCustomScrollbar" style="height: 215px;">
+										<div class="row">
+											<div class="col-sm-6">
+												<label class="checkbox">
+													<input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio1" value="option1"> 设备1
+												</label>
+											</div>
+											<div class="col-sm-6">
+												<label class="checkbox">
+													<input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio1" value="option1"> 设备1
+												</label>												
+											</div>
+											<div class="col-sm-6">
+												<label class="checkbox">
+													<input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio1" value="option1"> 设备1
+												</label>
+											</div>
+											<div class="col-sm-6">
+												<label class="checkbox">
+													<input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio1" value="option1"> 设备1
+												</label>												
+											</div>
+										</div>									
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label">设备分类</label>
+								<div class="col-sm-9">								
+									<select name="" class="form-control">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</div>
+							</div>
+							
+									
+									
+								</form>	
+								
+							</div>
+						</div>
+							
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-success btn-sm">提交</button>
+						<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>		
+				
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<!--datetime-->
+		<link rel="stylesheet" type="text/css" href="Plugin/bootstrap-datepicker/css/datepicker.css" />
+		<script src="Plugin/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>		
+
+	</body>
+
+</html>

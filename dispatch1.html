@@ -1,0 +1,1772 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<link rel="stylesheet" type="text/css" href="style/iBuilding.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<script type="text/javascript">
+			function changeModeIndex(sobj) {
+				
+				var value = sobj.options[sobj.selectedIndex].value;
+				
+
+				if (value == "3") {
+					$('#daych').css("display", "none");
+					$('#morech').css("display", "block");
+					$('.changebox').css("display", "none");
+					$('#moreth').css("display", "block");
+				} else if (value == "0") {
+					$('#morech').css("display", "none");
+					$('#daych').css("display", "block");
+					$('.changebox').css("display", "none");
+					$('#dayth').css("display", "block");
+					
+				} else if (value == "1") {
+					$('#morech').css("display", "none");
+					$('#daych').css("display", "block");
+					$('.changebox').css("display", "none");
+					$('#weekth').css("display", "block");
+					console.log(value);
+				} else if (value == "2") {
+					$('#morech').css("display", "none");
+					$('#daych').css("display", "block");
+					$('.changebox').css("display", "none");
+					$('#mounthth').css("display", "block");
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="container-fluid animated fadeInDown">
+			<div class="row row-title">
+				<div class="pull-left">
+					<label class="label label-lg label-primary"><i class="fa fa-user animated"></i> <a href="javascript::">时间表配置</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="dispatch2.html">时间表任务监控</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="dispatch3.html">联动配置</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="dispatch4.html">联动任务监控</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="javascript::">模式管理</a></label>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="ztreebox">
+				<div class="row ztree-btn">
+			  <button  alert="添加任务" class="btn btn-default btn-mini" type="button"> <a href="dispatch1.html"><i class="fa fa-plus"></i> <span class="btn-text">添加任务</span> </a></button>
+		      <button   alert="添加动作" class="btn btn-default btn-mini" type="button"> <a href="dispatch5.html"><i class="fa fa-angle-double-right"></i> <span class="btn-text">添加单个动作</span></</a> </button>
+		      <button  alert="添加多个" class="btn btn-default btn-mini" type="button"> <a href="dispatch6.html"><i class="fa fa-align-left"></i> <span class="btn-text">添加多个动作</span></a></button>
+		    </div>
+				<div class="zTreeDemoBackground mCustomScrollbar">
+					<ul id="zTree" class="ztree">
+					</ul>
+				</div>
+			</div>
+			<div class="ztree-content">
+				<div class="row">
+					<ul id="myTab" class="nav nav-tabs">
+						<li class="active"><a href="#mg2" data-toggle="tab">时间表配置-添加任务</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane  active" id="mg2">
+							<div class="tablebox clearfix">
+								<!-- table start -->
+
+								<div class="tablebox-con">
+									<form class="form-horizontal" id="mainForm" action="" method="post" style="position: relative;">
+										<input name="id" id="id" type="hidden" value="-1">
+										<input name="schedule" id="schedule" type="hidden" value="1">
+										<!-- 
+				<div class="row button-row">
+					<div class=" pull-right" role="group">
+						<button type="button" class="btn btn-primary btn-sm  "
+							onclick="addTask();">
+							添加任务
+						</button>
+						<button type="button" class="btn btn-success btn-sm"
+							onclick="addAction('-1','-1');">
+							添加单个动作
+						</button>
+						<button type="button" class="btn btn-primary btn-sm"
+							onclick="addListAction('-1','-1');">
+							添加多个动作
+						</button>
+
+					</div>
+				</div> -->
+										<div class="">
+											<!-- 
+					<div class="out_title">
+						
+							
+							时间表配置 -新增任务
+						
+					</div>
+                     -->
+											<div class="out-row">
+												<label class="checkbox-inline icheck-label icheck[ll3is]" for="enable">
+													<input type="checkbox" datetype="checkbox" />
+													<span> 启用</span>
+												</label>
+											</div>
+
+											<table class="table table-none fixed table-condensed">
+												<tbody>
+													<tr>
+
+														<td width="91" class="text-right" style="padding-right: 11px;">
+															任务名称
+														</td>
+														<td width="50%">
+															<div class="required-group">
+																<span class="requ">*</span>
+																<input type="text" name="taskName" id="taskName" value="" class="form-control input-sm ">
+															</div>
+														</td>
+														<td width="92" class="text-right">
+															任务描述
+														</td>
+														<td width="50%">
+
+															<input type="text" class="form-control input-sm " id="description" name="description" value="">
+
+														</td>
+
+													</tr>
+													<tr>
+
+														<!-- 高级设置 -->
+														<td width="91" class="text-right" style="padding-right: 11px;">
+															任务类型
+														</td>
+														<td width="50%">
+															<select class="form-control" name="ordered" id="ordered">
+																<option value="true" selected="selected">
+																	顺序型任务
+																</option>
+																<option value="false">
+																	无顺序型任务
+																</option>
+
+															</select>
+														</td>
+														<td width="92" class="text-right">
+															优先级
+														</td>
+														<td width="50%">
+															<input type="text" class="form-control input-sm  validate[custom[onlyIntegerCustom],min[1],max[1000]]" name="priority" id="priority" value="1">
+														</td>
+
+													</tr>
+												</tbody>
+											</table>
+
+											<div class="bmsbox">
+												<h1 class="bmsbox-title">
+							执行模式
+						</h1>
+
+												<table class="table table-none fixed table-condensed " style="width: 50%; margin-bottom: -11px;">
+													<tbody>
+														<tr>
+															<td width="69" style="text-align: right">
+																执行模式
+															</td>
+															<td width="7" style="padding-right: 0px;"></td>
+															<td id="runModelDiv">
+																<select class="form-control" onchange="changeModeIndex(this);">
+																	<option value="0" selected="selected">
+																		每天
+																	</option>
+																	<option value="1">
+																		每周
+																	</option>
+																	<option value="2">
+																		每月
+																	</option>
+																	<option value="3">
+																		多次
+																	</option>
+																</select>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+
+												<div class="bmsbox-con">
+
+													<div class="bmsbox bmsbox-sm" id="daych" style="display: block;">
+														<h1 class="bmsbox-title title-sm">
+									启动时间
+								</h1>
+														<div class="bmsbox-con">
+															<table class="table table-none fixed table-condensed">
+																<tbody>
+																	<tr>
+																		<td width="65" class="text-right" style="padding-right: 12px;">
+																			开始日期
+																		</td>
+																		<td>
+																			<div class="required-group">
+																				<span class="requ">*</span>
+																				<input type="text" onchange="changeStartDate(this);" class="form-control input-sm  validate[required]" name="tsTimeBean.startDate" id="tsTimeBean.startDate" value="2016-05-26" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'});">
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td width="65" class="text-right" style="padding-right: 12px;">
+																			开始时间
+																		</td>
+																		<td>
+																			<div class="required-group">
+																				<span class="requ">*</span>
+																				<input type="text" class="form-control input-sm validate[required]" name="tsTimeBean.startTimeStr" id="tsTimeBean.startTimeStr" value="01:46" onfocus="WdatePicker({dateFmt:'HH:mm'})">
+																			</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+
+															<div class="clear"></div>
+														</div>
+													</div>
+
+													<!-- week -->
+													<div class="bmsbox bmsbox-sm changebox" id="weekth" style="display: none;">
+														<h1 class="bmsbox-title title-sm">
+									执行时间
+								</h1>
+														<div class="bmsbox-con">
+															<table class="table table-none fixed table-condensed" style="margin-top: 0px;">
+																<tbody>
+																	<tr>
+																		<td width="65">
+																			执行日
+																		</td>
+																		<td class="text-left">
+																			<label class="checkbox-inline icheck-label icheck[rk6zn]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[rk6zn]">
+																					<input type="checkbox" name="execTime_week" class="validate[required] icheck-input icheck[rk6zn]" value="1">
+																				</div>
+																				周一
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[lck8k]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[lck8k]">
+																					<input type="checkbox" name="execTime_week" class="validate[required] icheck-input icheck[lck8k]" value="2">
+																				</div>
+																				周二
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[fd23z]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[fd23z]">
+																					<input type="checkbox" name="execTime_week" class="validate[required] icheck-input icheck[fd23z]" value="3">
+																				</div>
+																				周三
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[0dfzv]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[0dfzv]">
+																					<input type="checkbox" name="execTime_week" class="validate[required] icheck-input icheck[0dfzv]" value="4">
+																				</div>
+																				周四
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[rsg0g]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[rsg0g]">
+																					<input type="checkbox" name="execTime_week" class="validate[required] icheck-input icheck[rsg0g]" value="5">
+																				</div>
+																				周五
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[mj4px]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[mj4px]">
+																					<input type="checkbox" name="execTime_week" class="validate[required] icheck-input icheck[mj4px]" value="6">
+																				</div>
+																				周六
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[1mf11]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[1mf11]">
+																					<input type="checkbox" name="execTime_week" class="validate[required] icheck-input icheck[1mf11]" value="7">
+																				</div>
+																				周日
+																			</label>
+																		</td>
+
+																	</tr>
+																	<tr>
+																		<td></td>
+																		<td class="text-left">
+																			<label class="checkbox-inline icheck-label icheck[uh8dn]" for="weekSelectCheckbox">
+																				<div class="iradio_minimal-grey icheck-item icheck[uh8dn]">
+																					<input type="radio" id="weekSelectCheckbox" name="inlineCheckboxall" onchange="selectWeekAll(this);" value="option3" class="icheck-input icheck[uh8dn]">
+																				</div>
+																				<strong>全选</strong>
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[dnfmt]" for="weekReverseCheckbox">
+																				<div class="iradio_minimal-grey icheck-item icheck[dnfmt]">
+																					<input type="radio" id="weekReverseCheckbox" onchange="reverseWeekAll();" name="inlineCheckboxall" value="option3" class="icheck-input icheck[dnfmt]">
+																				</div>
+																				<strong>反选</strong>
+																			</label>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+
+															<div class="clear"></div>
+														</div>
+													</div>
+
+													<!-- mounth-->
+													<div class="bmsbox bmsbox-sm changebox" id="mounthth" style="display: none;">
+														<h1 class="bmsbox-title title-sm">
+									执行时间
+								</h1>
+														<div class="bmsbox-con">
+															<table class="table table-none fixed table-condensed">
+																<tbody>
+																	<tr>
+																		<td width="65" class="text-right">
+																			执行日
+																		</td>
+																		<td id="mouthday" class="text-left">
+																			<label class="checkbox-inline icheck-label icheck[clnws]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[clnws]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[clnws]" value="1">
+																				</div>
+																				1
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[bc3xi]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[bc3xi]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[bc3xi]" value="2">
+																				</div>
+																				2
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[rsffe]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[rsffe]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[rsffe]" value="3">
+																				</div>
+																				3
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[1d0y0]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[1d0y0]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[1d0y0]" value="4">
+																				</div>
+																				4
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[y235m]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[y235m]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[y235m]" value="5">
+																				</div>
+																				5
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[66ghz]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[66ghz]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[66ghz]" value="6">
+																				</div>
+																				6
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[1cmhi]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[1cmhi]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[1cmhi]" value="7">
+																				</div>
+																				7
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[vl064]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[vl064]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[vl064]" value="8">
+																				</div>
+																				8
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[kxq81]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[kxq81]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[kxq81]" value="9">
+																				</div>
+																				9
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[x86e8]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[x86e8]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[x86e8]" value="10">
+																				</div>
+																				10
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[unpn4]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[unpn4]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[unpn4]" value="11">
+																				</div>
+																				11
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[o3l38]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[o3l38]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[o3l38]" value="12">
+																				</div>
+																				12
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[shds4]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[shds4]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[shds4]" value="13">
+																				</div>
+																				13
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[wjrxf]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[wjrxf]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[wjrxf]" value="14">
+																				</div>
+																				14
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[lzqrs]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[lzqrs]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[lzqrs]" value="15">
+																				</div>
+																				15
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[nij30]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[nij30]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[nij30]" value="16">
+																				</div>
+																				16
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[vgp01]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[vgp01]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[vgp01]" value="17">
+																				</div>
+																				17
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[dcsol]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[dcsol]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[dcsol]" value="18">
+																				</div>
+																				18
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[7fdnk]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[7fdnk]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[7fdnk]" value="19">
+																				</div>
+																				19
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[usxiz]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[usxiz]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[usxiz]" value="20">
+																				</div>
+																				20
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[8b7re]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[8b7re]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[8b7re]" value="21">
+																				</div>
+																				21
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[6xvxq]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[6xvxq]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[6xvxq]" value="22">
+																				</div>
+																				22
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[s8img]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[s8img]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[s8img]" value="23">
+																				</div>
+																				23
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[hz70l]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[hz70l]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[hz70l]" value="24">
+																				</div>
+																				24
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[toh6a]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[toh6a]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[toh6a]" value="25">
+																				</div>
+																				25
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[ukia0]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[ukia0]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[ukia0]" value="26">
+																				</div>
+																				26
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[su6dq]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[su6dq]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[su6dq]" value="27">
+																				</div>
+																				27
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[8qr8e]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[8qr8e]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[8qr8e]" value="28">
+																				</div>
+																				28
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[frrkk]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[frrkk]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[frrkk]" value="29">
+																				</div>
+																				29
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[suh5z]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[suh5z]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[suh5z]" value="30">
+																				</div>
+																				30
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[ltwnn]">
+																				<div class="icheckbox_minimal-grey icheck-item icheck[ltwnn]">
+																					<input type="checkbox" name="execTime" class="validate[required] icheck-input icheck[ltwnn]" value="31">
+																				</div>
+																				31
+																			</label>
+
+																		</td>
+
+																	</tr>
+																	<tr>
+																		<td></td>
+																		<td class="text-left">
+																			<label class="checkbox-inlin icheck-label icheck[zm3mo]" for="mouthall1">
+																				<div class="iradio_minimal-grey icheck-item icheck[zm3mo]">
+																					<input type="radio" name="mouthall" id="mouthall1" onchange="selectMonthAll(this);" value="option3" class="icheck-input icheck[zm3mo]">
+																				</div>
+																				<strong>全选</strong>
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[27y3q]" style="margin-left: 5px;" for="mouthother2">
+																				<div class="iradio_minimal-grey icheck-item icheck[27y3q]">
+																					<input type="radio" name="mouthall" id="mouthother2" onchange="reverseMonthAll();" value="option3" class="icheck-input icheck[27y3q]">
+																				</div>
+																				<strong>反选</strong>
+																			</label>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+
+															<div class="clear"></div>
+														</div>
+													</div>
+
+													<!-- 多次 -->
+													<div class="bmsbox bmsbox-sm" style="display: none;" id="morech">
+														<h1 class="bmsbox-title title-sm">
+									运行时间
+								</h1>
+														<div class="bmsbox-con">
+															<table class="table table-none fixed table-condensed">
+																<tbody>
+																	<tr>
+																		<td width="65" style="padding-right: 12px;" class="text-right">
+																			开始日期
+																		</td>
+																		<td>
+																			<input type="text" class="form-control input-sm startDate    validate[required] " name="manyModelStartDate" id="manyModelStartDate" value="2016-05-26" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'});">
+																		</td>
+																	</tr>
+																	<tr>
+																		<td width="65" style="padding-right: 12px;" class="text-right">
+																			开始时间
+																		</td>
+																		<td>
+																			<input type="text" class="form-control input-sm  startTime    validate[required] " name="manyModelStartTime" id="manyModelStartTime" value="01:46" onfocus="WdatePicker({dateFmt:'HH:mm'})">
+																		</td>
+																	</tr>
+																	<tr>
+																		<td width="65" style="padding-right: 12px;">
+																			<!--添加时间     2015-7-10根据0003325编号bug  去掉-->
+																		</td>
+																		<td class="text-left">
+																			<button type="button" class="btn btn-primary btn-sm " onclick="addStartRunTime(this);">
+																				添加
+																			</button>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+
+															<div class="clear"></div>
+														</div>
+													</div>
+
+													<div class="bmsbox bmsbox-sm changebox" id="moreth" style="display: none;">
+														<h1 class="bmsbox-title title-sm">
+									运行时间
+								</h1>
+														<div class="bmsbox-con">
+															<table class="table table-none fixed table-condensed ">
+
+																<tbody>
+																	<tr>
+																		<td width="110" style="text-align: left">
+																			已添加的运行时间
+																		</td>
+																		<td id="manyRunTime" class="text-left" style="white-space:normal">
+
+																		</td>
+
+																	</tr>
+																	<tr>
+																		<td></td>
+																		<td class="text-left">
+																			<label class="checkbox-inline icheck-label icheck[2aw2b]" for="weekMouthCheckbox">
+																				<div class="iradio_minimal-grey icheck-item icheck[2aw2b]">
+																					<input type="radio" name="moreall" id="weekMouthCheckbox" onclick="selectManayTimeAll(this);" value="option3" class="icheck-input icheck[2aw2b]">
+																				</div>
+																				全选
+																			</label>
+																			<label class="checkbox-inline icheck-label icheck[m6609]" for="moreaother">
+																				<div class="iradio_minimal-grey icheck-item icheck[m6609]">
+																					<input type="radio" name="moreall" id="moreaother" onchange="reverseManayTimekAll();" value="option3" class="icheck-input icheck[m6609]">
+																				</div>
+																				反选
+																			</label>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+
+															<div class="clear"></div>
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row bms-btnzone" style="margin-top: 15px">
+
+													<div class="col-md-6 col-xs-6">
+														<button type="button" class="btn btn-default btn-sm" onclick="saveConfig();">
+															保存
+														</button>
+														<button type="button" class="btn btn-danger btn-sm" onclick="deleteByTaskId('-1');">
+															删除
+														</button>
+
+														<!--  
+					<button type="reset" class="btn btn-warning btn-sm"   onclick="saveConfig();">
+						恢复
+					</button>-->
+													</div>
+
+												</div>
+
+											</div>
+											<div class="clear"></div>
+
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<!--ztree-->
+		<link rel="stylesheet" type="text/css" href="Plugin/ztree/3.5/css/zTreeStyle/zTreeStyle.css" />
+		<script src="Plugin/ztree/3.5/js/jquery.ztree.all.min.js" type="text/javascript"></script>
+		<SCRIPT type="text/javascript">
+			<!--
+			var setting = {
+				data: {
+					simpleData: {
+						enable: true
+					}
+				}
+			};
+			var zNodes = [{
+				"id": "10",
+				"pId": "1",
+				"name": "应用集成平台",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "bc7901f53e9a4f81bf597ce3a092a4bb",
+				"pId": "b58cd0b4fb0e427d9990d36259edf0fd",
+				"name": "系统概述",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "1",
+				"pId": "0",
+				"name": "CEA's iPlatform",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "1",
+				"type": "10",
+				"open": true
+			}, {
+				"id": "ab13b03786434327bc3f835f6579b27b",
+				"pId": "2bddfdcf932a4e0d944eae06591ec8a9",
+				"name": "产品与11",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "27fa1cfac1e04ff79f24846335aaa39f",
+				"pId": "f21c0ce7db0941b48352d9c2977ebea9",
+				"name": "协同建筑设备管理系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "3ba01e845ac248dab372a7fffc8ca687",
+				"pId": "5c093c26e54d455c9fe9a3e1099c84de",
+				"name": "数据标准化管理",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "100",
+				"pId": "10",
+				"name": "个人工作台",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "3f7813109f424528b27a51ef66c43651",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "统一展现平台",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "d73309c2d45e4574a113718e3aa01266",
+				"pId": "bb0597c4c1a54866942774d24d029c0d",
+				"name": "智慧医疗",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "99369558f6b64c71be45ab27b7dee015",
+				"pId": "ba1f480fd8e24df89035cd541a3b74a0",
+				"name": "协同建筑设备管理系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "409fa5a0145241409b57395c0ca2e988",
+				"pId": "7776181bb0944b75b292514128bf4a92",
+				"name": "内部消息系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "1b7eeb4bcc404d35b8a994b03df9cca0",
+				"pId": "2ae5ffd8ec89470eb91d06f4b8036385",
+				"name": "test--产品应用与名称",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "90edac57301341609bd950062ebe29f1",
+				"pId": "56e3b704568746c28ee007d54969030f",
+				"name": "收件箱",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "1b1e31c280494088b32e42adef030b10",
+				"pId": "39328c8c78e64eae95cb7390b83c4b7d",
+				"name": "ERP产品",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "7ccee8eceb254b2b8f91d08c9eb5a819",
+				"pId": "d281e36207d348b59f92512174a1ee78",
+				"name": "oa",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "ab04b50f8c2c4c129d7393070aedca41",
+				"pId": "e86ff969963a44e9b7519d712b776c1b",
+				"name": "问问",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "6fb4d70d45394bcfbd45a0637853e8d5",
+				"pId": "3175ba92c5cb48778684f81e8f8c4b15",
+				"name": "测试产品",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "929fad85caaf4c50b5bfae975ecceb79",
+				"pId": "e3dd911da922479e86b01b2a77cb4834",
+				"name": "智慧旅游",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "4",
+				"type": "30"
+			}, {
+				"id": "02dee0b44ba24ba695b946ccfdb14a9c",
+				"pId": "820ee8918b224107baf3917b6a7899e2",
+				"name": "工作区页面样例（静态）",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "540d49c4573247159cdf0b0078d3bc1f",
+				"pId": "6187babea5a0481a878ae272cfa7bd7a",
+				"name": "报表系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "d2a2647f4715420aaaca500ceb94ce5e",
+				"pId": "671407e87df447958ca97abc022cbf45",
+				"name": "流程管理系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "a80066f7e9ef4a42af9a898d5daf0970",
+				"pId": "9a62d31b435741f8a9de2c6519c2db45",
+				"name": "楼宇管理系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "90704d77a96d4ed0a41e9e81204b47b1",
+				"pId": "e90d1c0f9e6b41ad9378a04de366ceea",
+				"name": "数据交换平台",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "839c8759bb7c4dbd81441a2baa5271d5",
+				"pId": "1370b099f5164ddbaeee44d565afe890",
+				"name": "舆情管理系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "7d7638f4cf654824bf35ca6d4636d723",
+				"pId": "75f2c0c456fe461781c1d309bb4ba59d",
+				"name": "安防管理",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "54f61eaa966a44919d5a54df2c4e303b",
+				"pId": "7bc632fb016340afb984562011929d65",
+				"name": "支付应用",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "4dc0ebec2ddb48d78bc2d5e9cecc247b",
+				"pId": "9859162852a4428b94892f484ae2a1cb",
+				"name": "能源管理系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "2bd3474c2c284a4b909372b8fdb1504b",
+				"pId": "839c8759bb7c4dbd81441a2baa5271d5",
+				"name": "测试二级",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "4",
+				"type": "30"
+			}, {
+				"id": "5b72f4b10ffc490ca004c7fc653fc59b",
+				"pId": "03dc31a0d719472ea971c63df57b8220",
+				"name": "OA系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "488fe213bca34547840d3f616c82492a",
+				"pId": "206981e306d84f4d8edb4393bfa50e4c",
+				"name": "OA系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "95aca10a1c0c4f9090daa191def42e55",
+				"pId": "dbbc506c69344704b6589c1bcdb55e5a",
+				"name": "日志系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "fcf9af47995046b7b5e661171babb854",
+				"pId": "37f4b1304e7640f0a4e49012e8eb4817",
+				"name": "行政审批系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "974bfcd1599c4a6983ced50c01b258da",
+				"pId": "e6c2d7873b344e70826b47b34bc77d96",
+				"name": "襄阳纪委监察",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "7665367a90874aa58da05317e54ce4fe",
+				"pId": "d5624012e8dc43ada2a83783b18302ff",
+				"name": "计量监管基础平台软件",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "e3dd911da922479e86b01b2a77cb4834",
+				"pId": "0db9ce830b134cdb8abf2b99d4588a46",
+				"name": "智慧交通",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "fd53829663374091a3cf95307a391f4b",
+				"pId": "cd77f97222ca487182e5d7822b87f1d9",
+				"name": "宁波国安局智能建筑集成",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "e55df30c80484dca858d96290000dd30",
+				"pId": "a90e3475fb0b44588f02222fbc06caae",
+				"name": "协同办公",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "9dc38ad53b3449f599bbdc8efd3ff2ac",
+				"pId": "85518d7b6f84415c89f8f22c29257beb",
+				"name": "OA",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "8ea6d4f8162a4db989be7c34e90630c9",
+				"pId": "1ca9ea3107634d96b158ecfcd8c5056b",
+				"name": "研发三层平台",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "2881ad0462bc4e36a403cae0d9adb92f",
+				"pId": "3f315c51086d44f0a12b1a9d73560003",
+				"name": "视频监控系统",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "a7c563addf914818bb93da0cae8f70e8",
+				"pId": "c520eb1db7b14bbda359588129923ddf",
+				"name": "软件栈测试0519",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "1fcd15ee0a204ff7b995817d0cc66925",
+				"pId": "a7c563addf914818bb93da0cae8f70e8",
+				"name": "测试02",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "4",
+				"type": "30"
+			}, {
+				"id": "5d209a063b604dbd9dd8aa682c482bd5",
+				"pId": "1",
+				"name": "内容管理平台",
+				"treeSort": "1",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "1010",
+				"pId": "10",
+				"name": "资源与用户权限管理",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "d64e0fb25ba0492aaf695a09315fc260",
+				"pId": "1",
+				"name": "应用开发平台",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "eb5c5fda512d406eb2b6e6ba71e68c55",
+				"pId": "d64e0fb25ba0492aaf695a09315fc260",
+				"name": "快速开发平台测试",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "f712142418dc4b54bc2f9ab965d99161",
+				"pId": "3f315c51086d44f0a12b1a9d73560003",
+				"name": "地图",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "e62df3194154426a8cc53dfe51861871",
+				"pId": "5c093c26e54d455c9fe9a3e1099c84de",
+				"name": "统一消息中心",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "9d3a6b34d7c64699a17b4022e35b26d8",
+				"pId": "ba1f480fd8e24df89035cd541a3b74a0",
+				"name": "协同能源管理系统",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "c3bed5ed612241f69eae4d7340822c61",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "时光网站内容管理系统",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "4e7224eb0a1d42e89089ffbd9336bff6",
+				"pId": "3175ba92c5cb48778684f81e8f8c4b15",
+				"name": "123",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "aa138755138d4c44bbf0ed1ebc9aae18",
+				"pId": "e86ff969963a44e9b7519d712b776c1b",
+				"name": "测试产品与应用",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "dbaaf46dda57402db6890a5637a59ca3",
+				"pId": "6187babea5a0481a878ae272cfa7bd7a",
+				"name": "业务管理系统",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "d1b5a90a32824ba3bc52313f61627bbf",
+				"pId": "9859162852a4428b94892f484ae2a1cb",
+				"name": "一卡通管理系统",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "fdd0f1c4160a4bbd83ce57e5874d390f",
+				"pId": "839c8759bb7c4dbd81441a2baa5271d5",
+				"name": "测试二级2",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "4",
+				"type": "30"
+			}, {
+				"id": "9fdc158ed160463d9ca56c842b679111",
+				"pId": "0db9ce830b134cdb8abf2b99d4588a46",
+				"name": "智慧旅游",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "9d362b814dba4a1c97f6a4e7c3847117",
+				"pId": "75f2c0c456fe461781c1d309bb4ba59d",
+				"name": "能源管理",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "ec9fc584e4dc4ad98d67dd38bf3037a6",
+				"pId": "03dc31a0d719472ea971c63df57b8220",
+				"name": "ERP系统",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "eaf582d724f4474db17e08f7f283cfcf",
+				"pId": "206981e306d84f4d8edb4393bfa50e4c",
+				"name": "人事管理系统",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "ebebb88a51a54df5a9550f056b875745",
+				"pId": "dbbc506c69344704b6589c1bcdb55e5a",
+				"name": "体系文件",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "0fa55e22646f4ec3b08c14a6bb99ce6b",
+				"pId": "37f4b1304e7640f0a4e49012e8eb4817",
+				"name": "文件管理系统",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "66f0a70d0c6542aba2cba1689ff88fcc",
+				"pId": "e90d1c0f9e6b41ad9378a04de366ceea",
+				"name": "主题数据库",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "309b4e336b2849b4a6380458bf555001",
+				"pId": "a90e3475fb0b44588f02222fbc06caae",
+				"name": "财务系统",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "30b825cdda004a1493c0afc2852f4b3c",
+				"pId": "85518d7b6f84415c89f8f22c29257beb",
+				"name": "质量检测",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "4ad01dd6382b4610b83c30c5be2bc628",
+				"pId": "1ca9ea3107634d96b158ecfcd8c5056b",
+				"name": "主题数据库",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "5d9a391821a5492f9f3004da28641362",
+				"pId": "b58cd0b4fb0e427d9990d36259edf0fd",
+				"name": "系统介绍",
+				"treeSort": "2",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "bca734701bbc4549b432fc912d90da3c",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "时光电子文件库",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "92a782ab38ad44a899e2df17aaef949c",
+				"pId": "5c093c26e54d455c9fe9a3e1099c84de",
+				"name": "统一会员管理",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "1020",
+				"pId": "10",
+				"name": "数据标准化管理",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "db3364af44ca4a4eaca22c8101f42ec8",
+				"pId": "ba1f480fd8e24df89035cd541a3b74a0",
+				"name": "协同综合安防管理系统",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "33cbc3dd422e46a3b757786a08e02e0e",
+				"pId": "3175ba92c5cb48778684f81e8f8c4b15",
+				"name": "测试",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "c36860c61e854c8c839b150a6e3fbc88",
+				"pId": "d64e0fb25ba0492aaf695a09315fc260",
+				"name": "快速开发平台",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "d77405844a2843f59e66dbaf1b7a024f",
+				"pId": "6187babea5a0481a878ae272cfa7bd7a",
+				"name": "协同办公系统",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "3273807f83cd4a6e9a5462f63ae741b0",
+				"pId": "e86ff969963a44e9b7519d712b776c1b",
+				"name": "111",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "c5e49318aeec46cc81ed574d9ef8f9c8",
+				"pId": "9859162852a4428b94892f484ae2a1cb",
+				"name": "设备管理系统",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "e90d1c0f9e6b41ad9378a04de366ceea",
+				"pId": "1",
+				"name": "共享交换平台",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "ba85ac4bbd234ce28f8b019747c19b89",
+				"pId": "dbbc506c69344704b6589c1bcdb55e5a",
+				"name": "体系流程",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "ea827c64f4b0416c85154944cc8efbf7",
+				"pId": "85518d7b6f84415c89f8f22c29257beb",
+				"name": "国家金质软件",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "c3003f374cd244f082e746c1b82eeda1",
+				"pId": "3f315c51086d44f0a12b1a9d73560003",
+				"name": "日常办公",
+				"treeSort": "3",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "1ca4c487482d413a9439aaa45956656b",
+				"pId": "d64e0fb25ba0492aaf695a09315fc260",
+				"name": "流程管理平台",
+				"treeSort": "4",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "1030",
+				"pId": "10",
+				"name": "统一消息中心",
+				"treeSort": "4",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "dbbe8a001b0644a6b6d976920c150a1c",
+				"pId": "e86ff969963a44e9b7519d712b776c1b",
+				"name": "客户关系管理系统",
+				"treeSort": "4",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "127cd4da92694d1f8e4ff40380525fe6",
+				"pId": "ba1f480fd8e24df89035cd541a3b74a0",
+				"name": "协同物业管理系统",
+				"treeSort": "4",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "bdf776ec28314b9e9fcd13ffba1d9f01",
+				"pId": "3175ba92c5cb48778684f81e8f8c4b15",
+				"name": "123",
+				"treeSort": "4",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "a7b5284008e9453f8d34652f14f9afc6",
+				"pId": "1",
+				"name": "共享交换平台",
+				"treeSort": "5",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "1040",
+				"pId": "10",
+				"name": "公共会员管理",
+				"treeSort": "5",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "84a98e46d0ca4a449735ed97b9560a9c",
+				"pId": "d64e0fb25ba0492aaf695a09315fc260",
+				"name": "主题数据库",
+				"treeSort": "5",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "ca1b4c1224bb4cb3abd0378253663d3e",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "工时管理系统",
+				"treeSort": "6",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "bb566c79ebca46b480279a4472cc9570",
+				"pId": "1",
+				"name": "公共应用栈",
+				"treeSort": "6",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "21064476fcf643c2b435a03fc1e09e20",
+				"pId": "10",
+				"name": "授权管理",
+				"treeSort": "6",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "1968a370fe764c4e963d306d95549229",
+				"pId": "1",
+				"name": "业务应用栈",
+				"treeSort": "7",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "7dce47dca7cd40b5b0b1e257e67add2a",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "时光智能推荐系统",
+				"treeSort": "7",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "5c093c26e54d455c9fe9a3e1099c84de",
+				"pId": "1",
+				"name": "应用开发平台",
+				"treeSort": "8",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "182775131372448089e66fe050e2f9b7",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "时光智能推荐系统(开发)",
+				"treeSort": "8",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "1370b099f5164ddbaeee44d565afe890",
+				"pId": "1",
+				"name": "渭南舆情",
+				"treeSort": "9",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "b71170d503424d4aa25323aeacbc878b",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "时光电子文件库",
+				"treeSort": "10",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "741b5f2723a44ee3b78e044ea66842e5",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "xq",
+				"treeSort": "11",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "0bca222fe99445dd91c4ad5d4e09c824",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "sck",
+				"treeSort": "12",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "104271e4366445219b7ff919701053a4",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "手法",
+				"treeSort": "13",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "65f07c6942e24981860dbd5169cf2676",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "时光数据分析系统",
+				"treeSort": "14",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "818ad817df164223959428d26c4cc903",
+				"pId": "5d209a063b604dbd9dd8aa682c482bd5",
+				"name": "时光智能推荐系统（昌吉）",
+				"treeSort": "15",
+				"nocheck": "true",
+				"resourceLevel": "3",
+				"type": "30"
+			}, {
+				"id": "2bddfdcf932a4e0d944eae06591ec8a9",
+				"pId": "1",
+				"name": "网站群管理",
+				"treeSort": "20",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "7776181bb0944b75b292514128bf4a92",
+				"pId": "1",
+				"name": "内部消息",
+				"treeSort": "33",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "ba1f480fd8e24df89035cd541a3b74a0",
+				"pId": "1",
+				"name": "智能建筑集成",
+				"treeSort": "34",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "56e3b704568746c28ee007d54969030f",
+				"pId": "1",
+				"name": "邮件",
+				"treeSort": "36",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "2ae5ffd8ec89470eb91d06f4b8036385",
+				"pId": "1",
+				"name": "runjianzhan",
+				"treeSort": "39",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "820ee8918b224107baf3917b6a7899e2",
+				"pId": "1",
+				"name": "页面样例（静态）",
+				"treeSort": "40",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "e86ff969963a44e9b7519d712b776c1b",
+				"pId": "1",
+				"name": "四十三",
+				"treeSort": "41",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "39328c8c78e64eae95cb7390b83c4b7d",
+				"pId": "1",
+				"name": "ERP软件栈",
+				"treeSort": "42",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "671407e87df447958ca97abc022cbf45",
+				"pId": "1",
+				"name": "流程管理",
+				"treeSort": "42",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "3175ba92c5cb48778684f81e8f8c4b15",
+				"pId": "1",
+				"name": "测试软件栈",
+				"treeSort": "43",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "d281e36207d348b59f92512174a1ee78",
+				"pId": "1",
+				"name": "测试软件栈测试2",
+				"treeSort": "45",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "bb0597c4c1a54866942774d24d029c0d",
+				"pId": "1",
+				"name": "智慧城市",
+				"treeSort": "46",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "f21c0ce7db0941b48352d9c2977ebea9",
+				"pId": "1",
+				"name": "智慧建筑集成(开发)",
+				"treeSort": "47",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "7bc632fb016340afb984562011929d65",
+				"pId": "1",
+				"name": "统一支付平台",
+				"treeSort": "48",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "9859162852a4428b94892f484ae2a1cb",
+				"pId": "1",
+				"name": "中国移动智慧园区",
+				"treeSort": "49",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "9a62d31b435741f8a9de2c6519c2db45",
+				"pId": "1",
+				"name": "北京中关村",
+				"treeSort": "50",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "6187babea5a0481a878ae272cfa7bd7a",
+				"pId": "1",
+				"name": "华夏汽车",
+				"treeSort": "51",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "75f2c0c456fe461781c1d309bb4ba59d",
+				"pId": "1",
+				"name": "儿童医院",
+				"treeSort": "52",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "cd77f97222ca487182e5d7822b87f1d9",
+				"pId": "1",
+				"name": "宁波国安局",
+				"treeSort": "53",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "d5624012e8dc43ada2a83783b18302ff",
+				"pId": "1",
+				"name": "计量监管基础平台软件",
+				"treeSort": "54",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "0db9ce830b134cdb8abf2b99d4588a46",
+				"pId": "1",
+				"name": "沈阳智慧城市",
+				"treeSort": "55",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "03dc31a0d719472ea971c63df57b8220",
+				"pId": "1",
+				"name": "陕鼓动力",
+				"treeSort": "56",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "dbbc506c69344704b6589c1bcdb55e5a",
+				"pId": "1",
+				"name": "广西海事",
+				"treeSort": "57",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "206981e306d84f4d8edb4393bfa50e4c",
+				"pId": "1",
+				"name": "烽火集团",
+				"treeSort": "58",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "37f4b1304e7640f0a4e49012e8eb4817",
+				"pId": "1",
+				"name": "湖北政务",
+				"treeSort": "59",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "e6c2d7873b344e70826b47b34bc77d96",
+				"pId": "1",
+				"name": "武汉测试",
+				"treeSort": "60",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "a90e3475fb0b44588f02222fbc06caae",
+				"pId": "1",
+				"name": "测控中心",
+				"treeSort": "61",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "85518d7b6f84415c89f8f22c29257beb",
+				"pId": "1",
+				"name": "质监局",
+				"treeSort": "62",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "1ca9ea3107634d96b158ecfcd8c5056b",
+				"pId": "1",
+				"name": "西京电气总公司",
+				"treeSort": "63",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "3f315c51086d44f0a12b1a9d73560003",
+				"pId": "1",
+				"name": "应急指挥综合管理平台",
+				"treeSort": "64",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "c520eb1db7b14bbda359588129923ddf",
+				"pId": "1",
+				"name": "软件栈测试0519",
+				"treeSort": "65",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "b58cd0b4fb0e427d9990d36259edf0fd",
+				"pId": "1",
+				"name": "框架集成开发平台介绍",
+				"treeSort": "66",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}, {
+				"id": "3a0699b7ae844aae850b1ee2d365e930",
+				"pId": "1",
+				"name": "传奇影业",
+				"treeSort": "67",
+				"nocheck": "true",
+				"resourceLevel": "2",
+				"type": "20"
+			}];
+			$(document).ready(function() {
+				$.fn.zTree.init($("#zTree"), setting, zNodes);
+			});
+			//-->
+		</SCRIPT>
+
+		<!--datetime-->
+		<link rel="stylesheet" type="text/css" href="Plugin/bootstrap-datepicker/css/bootstrap-datetimepicker.min.css" />
+		<script src="Plugin/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+		<script src="Plugin/bootstrap-datepicker/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+	</body>
+
+</html>

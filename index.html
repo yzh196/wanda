@@ -1,0 +1,578 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<style type="text/css">
+			.table-fixed tr td .fa{ font-size: 14px;}
+		</style>
+	</head>
+
+	<body>
+		<div class="container-fluid index-content animated fadeInDown">
+
+			<div class="row row-title">
+				<div class="pull-right">
+					<label class="label label-md label-info "><i class="fa fa-clock-o animated"></i> 开店时间</label>
+					<label class="label label-md label-info"><i class="fa fa-clock-o animated"></i> 闭店时间</label>
+					<label class="label label-md label-info" data-toggle='modal' data-target='#zijian'><i class="fa fa-clock-o animated"></i> 开店自检</label>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="row ">
+
+				<div class="col-sm-3">
+					<div class="panel panel-primary">
+						<div class="panel-heading">暖通空调 
+						<span class="pull-right">
+							<i class="fa fa-warning orange"></i>
+							<label class="label label-sm  label-white">节假日冬季供暖</label>
+						</span>
+						</div>
+						<div class="panel-body ">
+							<div class="row index-panelbox">
+								<div class="col-xs-3">
+									<div class=" panel-index">
+										<div class="panel-heading">吊装空调</div>
+										<div class="panel-body ">
+											<p class="num">12</p>
+											<p class="unit">共17台</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-3">
+									<div class=" panel-index">
+										<div class="panel-heading">冷机</div>
+										<div class="panel-body ">
+											<p class="num">201</p>
+											<p class="unit">共27台</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-3">
+									<div class=" panel-index">
+										<div class="panel-heading">新机组</div>
+										<div class="panel-body ">
+											<p class="num">41</p>
+											<p class="unit">共17台</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-3">
+									<div class=" panel-index">
+										<div class="panel-heading">组合空调</div>
+										<div class="panel-body ">
+											<p class="num">3</p>
+											<p class="unit">共117台</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="panel panel-primary" >
+						<div class="panel-heading">变配电
+							<span class="pull-right"><i class="fa fa-warning orange"></i> <i class="fa fa-warning danger"></i></span>
+						</div>
+						<div class="panel-body index-tablebox">
+							<table class="table table-bordered table-condensed table-fixed index-table">
+								<tr>
+									<td width="50">1T</td>
+									<td class="text-right sblue">50%</td>
+									<td width="50">5T</td>
+									<td class="text-right sblue">50%</td>
+								</tr>
+								<tr>
+									<td width="50">2T</td>
+									<td class="text-right sblue">50%</td>
+									<td width="50">6T</td>
+									<td class="text-right sblue">50%</td>
+								</tr>
+								<tr>
+									<td width="50">3T</td>
+									<td class="text-right sblue">50%</td>
+									<td width="50">7T</td>
+									<td class="text-right sblue">50%</td>
+								</tr>
+								<tr>
+									<td width="50">4T</td>
+									<td class="text-right sblue">50%</td>
+									<td width="50">8T</td>
+									<td class="text-right sblue">50%</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="panel panel-primary">
+						<div class="panel-heading">给水排水
+						<span class="pull-right"><i class="fa fa-warning orange"></i></span>
+						</div>
+						<div class="panel-body">
+							<div class="row index-panelbox">
+								<div class="col-xs-3">
+									<div class=" panel-index">
+										<div class="panel-heading">生活水泵</div>
+										<div class="panel-body ">
+											<p class="num">3</p>
+											<p class="unit">共4台</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-3">
+									<div class=" panel-index">
+										<div class="panel-heading">生活水箱</div>
+										<div class="panel-body ">
+											<p class="num">2</p>
+											<p class="unit">共7台</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-3">
+									<div class=" panel-index">
+										<div class="panel-heading">排水泵</div>
+										<div class="panel-body ">
+											<p class="num">41</p>
+											<p class="unit">共107台</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-3">
+									<div class=" panel-index">
+										<div class="panel-heading">集水坑</div>
+										<div class="panel-body ">
+											<p class="num">111</p>
+											<p class="unit">共117台</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="panel panel-primary">
+						<div class="panel-heading">公共照明
+						<span class="pull-right">
+							<label class="label label-sm  label-white">节假日晴天</label>
+						</span>
+						</div>
+						<div class="panel-body">
+							<div class="row index-panelbox">
+								<div class="col-xs-4">
+									<div class=" panel-index treeline">
+										<div class="panel-heading ">室内步行街</div>
+										<div class="panel-body ">
+											<p class="num">153</p>
+											<p class="unit">共217台</p>
+											<p class="malfunction">故障5台</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<div class=" panel-index treeline">
+										<div class="panel-heading">百货</div>
+										<div class="panel-body ">
+											<p class="num">121</p>
+											<p class="unit">共87台</p>
+											<p class="malfunction">故障6台</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<div class=" panel-index treeline">
+										<div class="panel-heading">地下车库</div>
+										<div class="panel-body ">
+											<p class="num">41</p>
+											<p class="unit">共27台</p>
+											<p class="malfunction">故障14台</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- row2 -->
+			<div class="row ">
+				
+				<div class="col-sm-3">
+					<div class="panel panel-primary">
+						<div class="panel-heading">夜景照明
+						<span class="pull-right">
+							<label class="label label-sm  label-white">重大节日</label>
+						</span>
+						</div>
+						<div class="panel-body">
+
+							<div class="row index-panelbox">
+								<div class="col-xs-4">
+									<div class=" panel-index treeline">
+										<div class="panel-heading">楼体照明</div>
+										<div class="panel-body ">
+											<p class="num">112</p>
+											<p class="unit">共17台</p>
+											<p class="malfunction">故障14台</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-4">
+									<div class=" panel-index treeline">
+										<div class="panel-heading">景观照明</div>
+										<div class="panel-body ">
+											<p class="num">71</p>
+											<p class="unit">共27台</p>
+											<p class="malfunction">故障14台</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-4">
+									<div class=" panel-index treeline">
+										<div class="panel-heading">标示照明</div>
+										<div class="panel-body ">
+											<p class="num">41</p>
+											<p class="unit">共17台</p>
+											<p class="malfunction">故障14台</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="panel panel-primary">
+						<div class="panel-heading">电梯运行</div>
+						<div class="panel-body index-tablebox">
+							<table class="table table-bordered table-condensed  index-table-2-4">
+								<tr>
+									<td width="90" rowspan="2" >直梯</td>
+									<td class="text-right">
+										<span class="pull-left">启用/总数</span>
+										<span class="sblue">17</span>/17
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right">
+										<span class="pull-left">故障数量</span>
+										<span class="sblue">0</span>
+									</td>
+								</tr>
+								<tr>
+									<td width="50" rowspan="2">扶梯</td>
+									<td class="text-right">
+										<span class="pull-left">启用/总数</span>
+										<span class="sblue">22</span>/23
+									</td>
+								</tr>
+								<tr>
+
+									<td class="text-right">
+										<span class="pull-left">故障数量</span>
+										<span class="sblue">1</span>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="panel panel-primary bg-purple">
+						<div class="panel-heading">客流统计</div>
+						<div class="panel-body index-tablebox">
+
+							<table class="table table-bordered table-condensed index-table">
+								<tr>
+									<td width="90">场内总人数</td>
+									<td class="text-right">23392</td>
+								</tr>
+								<tr>
+									<td>步行街人数</td>
+									<td class="text-right">3937</td>
+								</tr>
+								<tr>
+									<td>百货人数</td>
+									<td class="text-right">2233</td>
+
+								</tr>
+								<tr>
+									<td>前端设备故障</td>
+									<td class="text-right">23</td>
+
+								</tr>
+							</table>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="panel panel-primary bg-purple">
+						<div class="panel-heading">停车管理 </div>
+						<div class="panel-body index-tablebox">
+
+							<table class="table table-bordered table-condensed table-fixed index-table-1-2">
+								<tr>
+									<td width="90" rowspan="2">系统信息</td>
+									<td class="text-right purple">
+										<span class="pull-left">车辆总数</span>
+										475
+									</td>
+								</tr>
+								<tr>
+									<td class="text-right purple">
+										<span class="pull-left">车位总数</span>
+										425
+									</td>
+								</tr>
+
+							</table>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- row3 -->
+			<div class="row ">
+				<div class="col-sm-3">
+					<div class="panel panel-info bg-info">
+						<div class="panel-heading">视频监控
+						<span class="pull-right">
+							<i class="fa fa-warning orange"></i>
+						</span>
+						</div>
+						<div class="panel-body ">
+
+							<div class="row index-panelbox">
+								<div class="col-xs-4">
+									<div class=" panel-index">
+										<div class="panel-heading">防盗报警</div>
+										<div class="panel-body ">
+											<p class="num">12</p>
+											<p class="unit">共17台</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-4">
+									<div class=" panel-index ">
+										<div class="panel-heading">门禁管理 </div>
+										<div class="panel-body ">
+											<p class="num">201</p>
+											<p class="unit">共27台</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-4">
+									<div class=" panel-index">
+										<div class="panel-heading">电子巡更</div>
+										<div class="panel-body ">
+											<p class="num">41</p>
+											<p class="unit">共17台</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="panel panel-info bg-info">
+						<div class="panel-heading">防盗报警
+						</div>
+						<div class="panel-body index-tablebox">
+
+							<table class="table table-bordered table-condensed index-table-3-3">
+								<tr>
+									<td width="90">温感报警</td>
+									<td class="text-right">392</td>
+								</tr>
+								<tr>
+									<td>烟感报警</td>
+									<td class="text-right">3937</td>
+								</tr>
+								<tr>
+									<td>手动报警</td>
+									<td class="text-right">23</td>
+
+								</tr>
+							</table>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="panel panel-info bg-info">
+						<div class="panel-heading">门禁管理
+						</div>
+						<div class="panel-body index-tablebox">
+
+							<table class="table table-bordered table-condensed index-table-1-2">
+								<tr>
+									<td width="90" rowspan="2">系统信息</td>
+									<td class="text-right">
+										<span class="pull-left">设备总数</span>
+										392</td>
+								</tr>
+								<tr>
+
+									<td class="text-right ">
+										<span class="pull-left">报警数量</span>
+										7</td>
+								</tr>
+
+							</table>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="panel panel-info bg-info" date-href="www.baidu.com">
+						<div class="panel-heading">电子巡更 </div>
+						<div class="panel-body index-tablebox">
+
+							<table class="table table-bordered table-condensed index-table-3-3">
+								<tr>
+									<td width="90" >当前消耗</td>
+									<td class="text-right gblue">392 KW/h</td>
+								</tr>
+								<tr>
+									<td width="70" >当月消耗</td>
+									<td class="text-right gblue">337 KW/h</td>
+								</tr>
+								<tr>
+									<td width="70" >本年累计</td>
+									<td class="text-right gblue">3937 KW/h</td>
+
+								</tr>
+							</table>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+			
+				<!-- 开店自检 -->						
+				<div class="modal fade modal-info" id="zijian">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title">开店自检</h4>
+							</div>
+							<div class="modal-body">
+								
+								<table class="table table-bordered table-hover table-fixed">
+									<tr>
+										<th width="100">系统</th>
+										<th>进度</th>
+										<th width="80" class="text-center">图标状态</th>
+										<th>检查描述</th>
+									</tr>
+									<tr>
+										<td >
+											暖通空调
+										</td>
+										<td >
+											<div class="progress">
+											  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+											    <span class="sr-only">45% Complete</span>
+											  </div>
+											</div>											
+										</td>
+										<td class="text-center">
+											<i class="fa  green"></i>
+										</td>
+										<td>
+											冷机，新风机，暖通空调，吊装空调
+										</td>					
+									</tr>
+									<tr>
+										<td >
+											暖通空调
+										</td>
+										<td >
+											<div class="progress">
+											  <div class="progress-bar progress-bar-success " role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+											    <span class="sr-only">100% Complete</span>
+											  </div>
+											</div>											
+										</td>
+										<td class="text-center">
+											<i class="fa fa-check-circle green"></i>
+										</td>
+										<td>
+											冷机，新风机，暖通空调，吊装空调
+										</td>					
+									</tr>
+									
+								</table>
+								
+							
+								</div>
+								<div class="modal-footer">									
+									<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+			
+		
+
+		
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<script type="text/javascript">
+			$(".panel[date-href]").click(function(){
+				var vale= $(this).attr("date-href");
+				location.href = vale;
+			//	alert(vale);
+			})
+		</script>
+
+	</body>
+
+</html>

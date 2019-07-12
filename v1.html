@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="container-fluid animated fadeInDown">
+
+			<div class="tablebox">
+				<div class="table-title">
+					<div class="pull-left">
+						<div class="title-icon">
+						<i class="fa fa-list-alt"></i>
+						<i class="fa fa-chevron-circle-up"></i>
+						</div>
+						<h1>报警定义列表</h1>
+					</div>
+					<div class="pull-right">
+					<label class="label label-md label-success" data-toggle="modal" data-target="#newtr"><i class="fa fa-plus-circle animated"></i> 添加</label>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="tablebox-con">
+				<table class="table table-bordered table-hover table-striped" >
+					<tr>
+						<th width="70" class="text-center">编号</th>
+						<th class="text-center">报警名称</th>
+						<th  class="text-center">报警点</th>
+						<th  class="text-center">逻辑分组</th>					
+						<th  class="text-center">报警类型</th>
+						<th  class="text-center">报警规则</th>
+						<th  class="text-center">报警级别</th>
+						<th  class="text-center">报警分类</th>
+						<th  class="text-center">持续时间</th>
+						<th  class="text-center">切换页面</th>
+						<th  class="text-center">报警声音</th>
+						<th  width="90" class="text-center"></th>
+					</tr>
+					<tr>
+						<td class="text-center">1</td>
+						<td>送风机故障</td>
+						<td>3A</td>
+						<td>变化报警</td>
+						<td>暖通空调</td>
+						<td>组合式空调</td>
+						<td>AU-71A</td>
+						<td>skdka_912</td>
+						<td>5S</td>
+						<td>NO</td>
+						<td>YES</td>
+						<td class="text-center">							
+							<a href="#" title="编辑"><span class="label label-sm label-success"><i class="fa fa-edit"></i></span></a>
+							<a href="#" title="删除"><span class="label label-sm label-danger"><i class="fa fa-trash"></i></span></a>
+							<a href="#" title="查看"><span class="label label-sm "><i class="fa fa-link fadeInLeft"></i></span></a>							
+						</td>
+					</tr>
+					<tr>
+						<td class="text-center">2</td>
+						<td>送风机故障</td>
+						<td>3A</td>
+						<td>变化报警</td>
+						<td>暖通空调</td>
+						<td>组合式空调</td>
+						<td>AU-71A</td>
+						<td>skdka_912</td>
+						<td>5S</td>
+						<td>NO</td>
+						<td>YES</td>
+						<td class="text-center">							
+							<a href="#" title="编辑"><span class="label label-sm label-success"><i class="fa fa-edit"></i></span></a>
+							<a href="#" title="删除"><span class="label label-sm label-danger"><i class="fa fa-trash"></i></span></a>
+							<a href="#" title="查看"><span class="label label-sm "><i class="fa fa-link fadeInLeft"></i></span></a>							
+						</td>
+					</tr>
+					<tr>
+						<td class="text-center">3</td>
+						<td>送风机故障</td>
+						<td>3A</td>
+						<td>变化报警</td>
+						<td>暖通空调</td>
+						<td>组合式空调</td>
+						<td>AU-71A</td>
+						<td>skdka_912</td>
+						<td>5S</td>
+						<td>NO</td>
+						<td>YES</td>
+						<td class="text-center">							
+							<a href="#" title="编辑"><span class="label label-sm label-success"><i class="fa fa-edit"></i></span></a>
+							<a href="#" title="删除"><span class="label label-sm label-danger"><i class="fa fa-trash"></i></span></a>
+							<a href="#" title="查看"><span class="label label-sm "><i class="fa fa-link fadeInLeft"></i></span></a>							
+						</td>
+					</tr>
+					<tr>
+						<td class="text-center">4</td>
+						<td>送风机故障</td>
+						<td>3A</td>
+						<td>变化报警</td>
+						<td>暖通空调</td>
+						<td>组合式空调</td>
+						<td>AU-71A</td>
+						<td>skdka_912</td>
+						<td>5S</td>
+						<td>NO</td>
+						<td>YES</td>
+						<td class="text-center">							
+							<a href="#" title="编辑"><span class="label label-sm label-success"><i class="fa fa-edit"></i></span></a>
+							<a href="#" title="删除"><span class="label label-sm label-danger"><i class="fa fa-trash"></i></span></a>
+							<a href="#" title="查看"><span class="label label-sm "><i class="fa fa-link fadeInLeft"></i></span></a>							
+						</td>
+					</tr>
+				</table>
+				
+				<div class="row">
+										<div class="col-xs-6">
+											共有
+											<code>15</code> 条记录，每页
+											<select id="pageSize" name="pageSize" onchange="jumpPage('1')" class="input-sm">
+
+												<option value="1">1</option>
+
+												<option value="12">12</option>
+
+												<option value="15" selected="">15</option>
+
+												<option value="20">20</option>
+
+												<option value="30">30</option>
+
+												<option value="50">50</option>
+
+												<option value="100">100</option>
+
+												<option value="200">200</option>
+
+											</select> 条
+										</div>
+										<div class="col-xs-6">
+											<ul class="list-inline pull-right">
+
+												<li> <a href="javascript:void(0);">首页</a> </li>
+												<li> <a href="javascript:void(0);">上页</a> </li>
+
+												<li> <a href="javascript:void(0);">下页</a> </li>
+												<li> <a href="javascript:void(0);">末页</a> </li>
+
+												<li>跳到
+													<select id="gopage" name="gopage" class="input-sm" onchange="go();">
+
+														<option value="1" selected="">1/1</option>
+
+													</select> 页
+												</li>
+											</ul>
+										</div>
+									</div>	
+				</div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+
+	</body>
+
+</html>

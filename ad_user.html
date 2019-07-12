@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<div class="container-fluid  animated fadeInDown">
+
+			<div class="row row-title">
+				<div class="pull-left">
+					<label class="label label-lg label-info"><i class="fa fa-user animated"></i> <a href="user.html">用户信息维护</a></label>
+					<label class="label label-lg label-primary"><i class="fa fa-asterisk animated"></i> <a href="javascript::">用户权限分配</a></label>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="userbox">
+
+				<div class="row">
+					<div class="pull-left user-title">
+						<ul role="tablist" id="usercheck">
+							<label class="label label-md label-info"><a href="#home" class="active" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-user "></i> 一般用户</a></label>
+							<label class="label label-md label-info"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-user-secret "></i> 技术用户</a></label>
+							<label class="label label-md label-info"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-users"></i> 管理员</a></label>
+						</ul>
+						<span class="text-center arrow"><i class="fa fa-angle-double-down"></i></span>
+					</div>
+					<div class="clearfix"></div>
+
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home">
+							<div class="row navbox">
+								<label class="control-label pull-left">主菜单</label>
+								<div class="col-sm-11">
+									<label class="label label-md label-info" href="#tab-1-1" aria-controls="tab-1-1" role="tab" data-toggle="tab"><i class="fa fa-home "></i> <span>系统首页</span></label>
+									<label class="label label-md label-info" href="#tab-1-2" aria-controls="tab-1-2" role="tab" data-toggle="tab"><i class="fa fa-user-plus "></i> <span>用户管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-3" aria-controls="tab-1-3" role="tab" data-toggle="tab"><i class="fa fa-bolt "></i> <span>报警管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-4" aria-controls="tab-1-4" role="tab" data-toggle="tab"><i class="fa fa-book "></i> <span>运行日志</span></label>
+									<label class="label label-md label-info" href="#tab-1-5" aria-controls="tab-1-5" role="tab" data-toggle="tab"><i class="fa fa-exchange "></i> <span>报表查询</span></label>
+									<label class="label label-md label-info" href="#tab-1-6" aria-controls="tab-1-6" role="tab" data-toggle="tab"><i class="fa fa-cog "></i> <span>担保管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-7" aria-controls="tab-1-7" role="tab" data-toggle="tab"><i class="fa fa-file "></i> <span>模式管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-8" aria-controls="tab-1-8" role="tab" data-toggle="tab"><i class="fa fa-calendar "></i> <span>系统日历</span></label>
+									<label class="label label-md label-info" href="#tab-1-9" aria-controls="tab-1-9" role="tab" data-toggle="tab"><i class="fa fa-wrench "></i> <span>系统配置</span></label>
+								</div>
+							</div>
+
+							<div class="row">
+								<label class="control-label pull-left"></label>
+								<div class="col-sm-11">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" value=""> 全局模式控制
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="tab-content">
+
+							</div>
+
+						</div>
+						<div role="tabpanel" class="tab-pane" id="profile">
+							<div class="row navbox">
+								<label class="control-label pull-left">主菜单</label>
+								<div class="col-sm-11">
+									<label class="label label-md label-info" href="#tab-1-1" aria-controls="tab-1-1" role="tab" data-toggle="tab"><i class="fa fa-home "></i> <span>系统首页</span></label>
+									<label class="label label-md label-info" href="#tab-1-2" aria-controls="tab-1-2" role="tab" data-toggle="tab"><i class="fa fa-user-plus "></i> <span>用户管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-3" aria-controls="tab-1-3" role="tab" data-toggle="tab"><i class="fa fa-bolt "></i> <span>报警管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-4" aria-controls="tab-1-4" role="tab" data-toggle="tab"><i class="fa fa-book "></i> <span>运行日志</span></label>
+									<label class="label label-md label-info" href="#tab-1-5" aria-controls="tab-1-5" role="tab" data-toggle="tab"><i class="fa fa-exchange "></i> <span>报表查询</span></label>
+									<label class="label label-md label-info" href="#tab-1-6" aria-controls="tab-1-6" role="tab" data-toggle="tab"><i class="fa fa-cog "></i> <span>担保管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-7" aria-controls="tab-1-7" role="tab" data-toggle="tab"><i class="fa fa-file "></i> <span>模式管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-8" aria-controls="tab-1-8" role="tab" data-toggle="tab"><i class="fa fa-calendar "></i> <span>系统日历</span></label>
+									<label class="label label-md label-info" href="#tab-1-9" aria-controls="tab-1-9" role="tab" data-toggle="tab"><i class="fa fa-wrench "></i> <span>系统配置</span></label>
+								</div>
+							</div>
+							<div class="row">
+								<label class="control-label pull-left"></label>
+								<div class="col-sm-11">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" value=""> 全局模式控制
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="messages">
+							<div class="row navbox">
+								<label class="control-label pull-left">主菜单</label>
+								<div class="col-sm-11">
+									<label class="label label-md label-info" href="#tab-1-1" aria-controls="tab-1-1" role="tab" data-toggle="tab"><i class="fa fa-home "></i> <span>系统首页</span></label>
+									<label class="label label-md label-info" href="#tab-1-2" aria-controls="tab-1-2" role="tab" data-toggle="tab"><i class="fa fa-user-plus "></i> <span>用户管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-3" aria-controls="tab-1-3" role="tab" data-toggle="tab"><i class="fa fa-bolt "></i> <span>报警管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-4" aria-controls="tab-1-4" role="tab" data-toggle="tab"><i class="fa fa-book "></i> <span>运行日志</span></label>
+									<label class="label label-md label-info" href="#tab-1-5" aria-controls="tab-1-5" role="tab" data-toggle="tab"><i class="fa fa-exchange "></i> <span>报表查询</span></label>
+									<label class="label label-md label-info" href="#tab-1-6" aria-controls="tab-1-6" role="tab" data-toggle="tab"><i class="fa fa-cog "></i> <span>担保管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-7" aria-controls="tab-1-7" role="tab" data-toggle="tab"><i class="fa fa-file "></i> <span>模式管理</span></label>
+									<label class="label label-md label-info" href="#tab-1-8" aria-controls="tab-1-8" role="tab" data-toggle="tab"><i class="fa fa-calendar "></i> <span>系统日历</span></label>
+									<label class="label label-md label-info" href="#tab-1-9" aria-controls="tab-1-9" role="tab" data-toggle="tab"><i class="fa fa-wrench "></i> <span>系统配置</span></label>
+								</div>
+							</div>
+							<div class="row">
+								<label class="control-label pull-left"></label>
+								<div class="col-sm-11">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" value=""> 全局模式控制
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div role="tabpanel" class="senced" >
+						<div class="row">
+							<label class="control-label pull-left">子系统</label>
+							<div class="col-sm-11">
+								<label class="label label-md label-white"><i class="fa fa-cloud"></i> <span>暖气空调</span></label>
+								<label class="label label-md label-white"><i class="fa fa-tint"></i> <span>给水排水</span></label>
+								<label class="label label-md label-white"><i class="fa fa-bolt"></i> <span>变配电</span></label>
+								<label class="label label-md label-white"><i class="fa fa-key"></i> <span>公共钥匙</span></label>
+								<label class="label label-md label-white"><i class="fa fa-lightbulb-o"></i> <span>夜景照明</span></label>
+								<label class="label label-md label-white"><i class="fa fa-building"></i> <span>电梯运行</span></label>
+								<label class="label label-md label-white"><i class="fa fa-users"></i> <span>客流统计</span></a>
+								</label>
+								<label class="label label-md label-white"><i class="fa fa-car"></i> <span>停车管理</span></label>
+								<label class="label label-md label-white"><i class="fa fa-video-camera"></i> <span>视频监控</span></label>
+								<label class="label label-md label-white"><i class="fa fa-warning"></i> <span>防盗报警</span></label>
+								<label class="label label-md label-white"><i class="fa fa-lock"></i> <span>门禁管理</span></label>
+								<label class="label label-md label-white"><i class="fa fa-power-off"></i> <span>能耗计量</span></label>
+							</div>
+						</div>
+						<div class="row">
+							<label class="control-label pull-left"></label>
+							<div class="col-sm-11">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" value=""> 全局模式控制
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<label class="control-label pull-left"></label>
+							<div class="col-sm-11">
+								<div class="table-box">
+									<table class="table table-bordered table-hover table-striped table-condensed tabel-fixed">
+										<tr>
+											<th class="text-center">选择</th>
+											<th>控制</th>
+											<th>浏览</th>
+											<th>子系统</th>
+										</tr>
+										<tr>
+											<td class="text-center">2016年2月24日11:12:45</td>
+											<td>
+												<input type="checkbox" datetype='checkbox' />
+											</td>
+											<td>
+												<input type="checkbox" datetype='checkbox' />
+											</td>
+											<td>暖通空调</td>
+										</tr>
+										<tr>
+											<td class="text-center">2016年2月24日11:12:45</td>
+											<td>
+												<input type="checkbox" datetype='checkbox' />
+											</td>
+											<td>
+												<input type="checkbox" datetype='checkbox' />
+											</td>
+											<td>暖通空调</td>
+										</tr>
+										<tr>
+											<td class="text-center">2016年2月24日11:12:45</td>
+											<td>
+												<input type="checkbox" datetype='checkbox' />
+											</td>
+											<td>
+												<input type="checkbox" datetype='checkbox' />
+											</td>
+											<td>暖通空调</td>
+										</tr>
+										<tr>
+											<td class="text-center">2016年2月24日11:12:45</td>
+											<td>
+												<input type="checkbox" datetype='checkbox' />
+											</td>
+											<td>
+												<input type="checkbox" datetype='checkbox' />
+											</td>
+											<td>暖通空调</td>
+										</tr>
+									</table>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					</div>
+
+
+				</div>
+			</div>
+
+		</div>
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<script type="text/javascript">
+			$("#usercheck label a").click(function(){
+				$("#usercheck label  a").removeClass("active");
+				$(this).addClass("active");
+				var label = $(this).attr("aria-controls");
+				if(label =="home"){
+					$(".user-title .arrow").css("margin-left","0px");
+				}else if(label =="profile"){
+					$(".user-title .arrow").css("margin-left","75px");
+				}else{
+					$(".user-title .arrow").css("margin-left","150px");
+				}
+			});
+			
+			$(".navbox label").click(function(){
+				$(".navbox label").removeClass("active");
+				$(this).addClass("active");			
+			});
+			
+			$(".senced .label-white").click(function(){
+				$(this).toggleClass("active");			
+			});
+		</script>
+	</body>
+
+</html>

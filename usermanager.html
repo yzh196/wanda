@@ -1,0 +1,1138 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<div class="container-fluid animated fadeInDown">
+
+			<div class="">
+				<div>
+					<div class="">
+
+						<div class="tablebox">
+							<!-- table start -->
+							<div class="row tablebox-title">
+								<div class="col-sm-6 tablebox-title-left">
+									<div class="row">
+										<div class="col-xs-5">
+											<input type="text" class="form-control input-sm" placeholder="登录名"  id="filter_LIKE_name " name="filter_LIKE_name ">
+					</div>
+					<div class="col-xs-5 ">
+						<input type="text " class="form-control input-sm " placeholder="真实姓名" id="filter_LIKE_realName " name="filter_LIKE_realName ">
+					</div>
+					<div class="col-xs-2 ">
+						<button type="button " onclick="search(); " class="btn btn-default btn-sm ">搜索</button>
+					</div>
+					<!-- /input-group -->
+				</div>
+				</div>
+				<div class="col-sm-6 ">
+					<div class="pull-right ">
+					
+						<button type="button " onclick="create(); " class="btn btn-success btn-sm ">
+							<i class="fa fa-plus "></i> 新增
+						</button>
+
+				 
+					 <button class="btn btn-info " type="button " onclick="startUsers(); ">
+						<i class="fa fa-unlock "></i> 启用
+					</button>
+				
+				
+					<button class="btn btn-warning " type="button " onclick="stopUsers() ">
+						 <i class="fa fa-lock "></i>  停用
+					</button>
+				
+				
+					<button type="button " class="btn btn-danger btn-sm " onclick="ondelData(); ">
+						<i class="fa fa-minus "></i> 删除
+					</button>
+				
+					</div>
+				</div>
+			</div>
+			<div class="tablebox-con ">
+			<table class="table table-striped table-bordered table-hover table-condensed table-fixed ">
+
+				<tr>
+					<th width="30px "><div class="icheckbox_minimal-grey icheck-item icheck[4bp28] "><input id="chk " name="chk " type="checkbox " onclick="selectAllChk(this) " class="icheck-input icheck[4bp28] "></div></th>
+					<td width="25% "><span>登录名</span></td>
+					<td width="25% "><span>真实姓名</span></td>
+					<td width="25% "><span>编号</span></td>
+					<td width="25% "><span>所属机构</span></td>
+					<td width="40px "><span>状态</span></td>
+					<td width="80px ">操作</td>
+					<td width="80px ">用户权限</td>
+					<td width="140px ">用户设置</td>
+				</tr>
+
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						
+						<td width="25% "> 
+								root 
+						</td>
+						<td width="25% ">root</td>
+						<td width="25% ">root</td>
+						<td width="25% ">组织机构根节点</td>
+						<td width="40px " align="left ">						
+							  启用
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( 'd9932c0686674a569bb99daf1e8ac44e') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( 'd9932c0686674a569bb99daf1e8ac44e') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( 'd9932c0686674a569bb99daf1e8ac44e') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( 'd9932c0686674a569bb99daf1e8ac44e', 'root') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( 'd9932c0686674a569bb99daf1e8ac44e', 'root') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( 'd9932c0686674a569bb99daf1e8ac44e') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( 'd9932c0686674a569bb99daf1e8ac44e') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( 'd9932c0686674a569bb99daf1e8ac44e') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( 'd9932c0686674a569bb99daf1e8ac44e') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								ylh 
+						</td>
+						<td width="25% ">1</td>
+						<td width="25% ">1</td>
+						<td width="25% ">西安协同时光软件</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( '560d8db2e2214cc6b87621949a2ebec2') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( '560d8db2e2214cc6b87621949a2ebec2') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( '560d8db2e2214cc6b87621949a2ebec2') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( '560d8db2e2214cc6b87621949a2ebec2', '1') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( '560d8db2e2214cc6b87621949a2ebec2', '1') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( '560d8db2e2214cc6b87621949a2ebec2') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( '560d8db2e2214cc6b87621949a2ebec2') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( '560d8db2e2214cc6b87621949a2ebec2') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( '560d8db2e2214cc6b87621949a2ebec2') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								11111 
+						</td>
+						<td width="25% ">11111</td>
+						<td width="25% ">11111</td>
+						<td width="25% ">西安协同时光软件</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( '3630fa69b73549beadc08778d3624f6f') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( '3630fa69b73549beadc08778d3624f6f') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( '3630fa69b73549beadc08778d3624f6f') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( '3630fa69b73549beadc08778d3624f6f', '11111') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( '3630fa69b73549beadc08778d3624f6f', '11111') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( '3630fa69b73549beadc08778d3624f6f') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( '3630fa69b73549beadc08778d3624f6f') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( '3630fa69b73549beadc08778d3624f6f') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( '3630fa69b73549beadc08778d3624f6f') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								111 
+						</td>
+						<td width="25% ">11</td>
+						<td width="25% ">111</td>
+						<td width="25% ">测试机构下级机构测试部门</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( 'ccc32fc8c9c1481a83cd082005a266e9') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( 'ccc32fc8c9c1481a83cd082005a266e9') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( 'ccc32fc8c9c1481a83cd082005a266e9') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( 'ccc32fc8c9c1481a83cd082005a266e9', '11') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( 'ccc32fc8c9c1481a83cd082005a266e9', '11') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( 'ccc32fc8c9c1481a83cd082005a266e9') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( 'ccc32fc8c9c1481a83cd082005a266e9') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( 'ccc32fc8c9c1481a83cd082005a266e9') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( 'ccc32fc8c9c1481a83cd082005a266e9') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								lisp 
+						</td>
+						<td width="25% ">李苏培</td>
+						<td width="25% ">lisp</td>
+						<td width="25% ">西安协同时光软件</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( '3e4538ac23b148418b0ef85779a8da86') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( '3e4538ac23b148418b0ef85779a8da86') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( '3e4538ac23b148418b0ef85779a8da86') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( '3e4538ac23b148418b0ef85779a8da86', '李苏培') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( '3e4538ac23b148418b0ef85779a8da86', '李苏培') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( '3e4538ac23b148418b0ef85779a8da86') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( '3e4538ac23b148418b0ef85779a8da86') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( '3e4538ac23b148418b0ef85779a8da86') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( '3e4538ac23b148418b0ef85779a8da86') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								iexchange_nj 
+						</td>
+						<td width="25% ">南京分中心</td>
+						<td width="25% ">0002</td>
+						<td width="25% ">数据交换项目组</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( 'a7346a85072243cc871345af7391839a') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( 'a7346a85072243cc871345af7391839a') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( 'a7346a85072243cc871345af7391839a') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( 'a7346a85072243cc871345af7391839a', '南京分中心') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( 'a7346a85072243cc871345af7391839a', '南京分中心') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( 'a7346a85072243cc871345af7391839a') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( 'a7346a85072243cc871345af7391839a') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( 'a7346a85072243cc871345af7391839a') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( 'a7346a85072243cc871345af7391839a') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								ldd 
+						</td>
+						<td width="25% ">ldd</td>
+						<td width="25% ">ldd</td>
+						<td width="25% ">协同</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( '2f5ff090de234821a60e51b28b8abf85') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( '2f5ff090de234821a60e51b28b8abf85') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( '2f5ff090de234821a60e51b28b8abf85') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( '2f5ff090de234821a60e51b28b8abf85', 'ldd') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( '2f5ff090de234821a60e51b28b8abf85', 'ldd') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( '2f5ff090de234821a60e51b28b8abf85') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( '2f5ff090de234821a60e51b28b8abf85') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( '2f5ff090de234821a60e51b28b8abf85') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( '2f5ff090de234821a60e51b28b8abf85') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								1 
+						</td>
+						<td width="25% ">1</td>
+						<td width="25% ">1</td>
+						<td width="25% "></td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( '6a0a5ca016d540f68ee10dab7f968e7e') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( '6a0a5ca016d540f68ee10dab7f968e7e') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( '6a0a5ca016d540f68ee10dab7f968e7e') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( '6a0a5ca016d540f68ee10dab7f968e7e', '1') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( '6a0a5ca016d540f68ee10dab7f968e7e', '1') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( '6a0a5ca016d540f68ee10dab7f968e7e') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( '6a0a5ca016d540f68ee10dab7f968e7e') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( '6a0a5ca016d540f68ee10dab7f968e7e') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( '6a0a5ca016d540f68ee10dab7f968e7e') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								yali_99 
+						</td>
+						<td width="25% ">yali_99</td>
+						<td width="25% ">yali_99</td>
+						<td width="25% ">测试部门1</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( '85b04f46c3f6463e87c5c672a3326a64') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( '85b04f46c3f6463e87c5c672a3326a64') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( '85b04f46c3f6463e87c5c672a3326a64') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( '85b04f46c3f6463e87c5c672a3326a64', 'yali_99') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( '85b04f46c3f6463e87c5c672a3326a64', 'yali_99') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( '85b04f46c3f6463e87c5c672a3326a64') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( '85b04f46c3f6463e87c5c672a3326a64') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( '85b04f46c3f6463e87c5c672a3326a64') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( '85b04f46c3f6463e87c5c672a3326a64') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								yali_98 
+						</td>
+						<td width="25% ">yali_98</td>
+						<td width="25% ">yali_98</td>
+						<td width="25% ">测试部门1</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( '47c21d6fc26c40a8858a80953b7a5f7e') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( '47c21d6fc26c40a8858a80953b7a5f7e') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( '47c21d6fc26c40a8858a80953b7a5f7e') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( '47c21d6fc26c40a8858a80953b7a5f7e', 'yali_98') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( '47c21d6fc26c40a8858a80953b7a5f7e', 'yali_98') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( '47c21d6fc26c40a8858a80953b7a5f7e') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( '47c21d6fc26c40a8858a80953b7a5f7e') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( '47c21d6fc26c40a8858a80953b7a5f7e') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( '47c21d6fc26c40a8858a80953b7a5f7e') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								yali_97 
+						</td>
+						<td width="25% ">yali_97</td>
+						<td width="25% ">yali_97</td>
+						<td width="25% ">测试部门1</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( 'df8f9a2c546341d69bc4bb96e051ee78') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( 'df8f9a2c546341d69bc4bb96e051ee78') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( 'df8f9a2c546341d69bc4bb96e051ee78') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( 'df8f9a2c546341d69bc4bb96e051ee78', 'yali_97') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( 'df8f9a2c546341d69bc4bb96e051ee78', 'yali_97') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( 'df8f9a2c546341d69bc4bb96e051ee78') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( 'df8f9a2c546341d69bc4bb96e051ee78') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( 'df8f9a2c546341d69bc4bb96e051ee78') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( 'df8f9a2c546341d69bc4bb96e051ee78') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								yali_96 
+						</td>
+						<td width="25% ">yali_96</td>
+						<td width="25% ">yali_96</td>
+						<td width="25% ">测试部门1</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( 'f3a98ea121954eb0b384ce1636c86fb2') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( 'f3a98ea121954eb0b384ce1636c86fb2') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( 'f3a98ea121954eb0b384ce1636c86fb2') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( 'f3a98ea121954eb0b384ce1636c86fb2', 'yali_96') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( 'f3a98ea121954eb0b384ce1636c86fb2', 'yali_96') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( 'f3a98ea121954eb0b384ce1636c86fb2') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( 'f3a98ea121954eb0b384ce1636c86fb2') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( 'f3a98ea121954eb0b384ce1636c86fb2') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( 'f3a98ea121954eb0b384ce1636c86fb2') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								yali_95 
+						</td>
+						<td width="25% ">yali_95</td>
+						<td width="25% ">yali_95</td>
+						<td width="25% ">测试部门1</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( '45bd98ed04134510b75bf9fcecf83b03') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( '45bd98ed04134510b75bf9fcecf83b03') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( '45bd98ed04134510b75bf9fcecf83b03') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( '45bd98ed04134510b75bf9fcecf83b03', 'yali_95') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( '45bd98ed04134510b75bf9fcecf83b03', 'yali_95') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( '45bd98ed04134510b75bf9fcecf83b03') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( '45bd98ed04134510b75bf9fcecf83b03') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( '45bd98ed04134510b75bf9fcecf83b03') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( '45bd98ed04134510b75bf9fcecf83b03') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								99999 
+						</td>
+						<td width="25% ">9999</td>
+						<td width="25% ">999999</td>
+						<td width="25% ">XXX公司</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( 'd6142c6e287544ae82a917ed37b4362c') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( 'd6142c6e287544ae82a917ed37b4362c') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( 'd6142c6e287544ae82a917ed37b4362c') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( 'd6142c6e287544ae82a917ed37b4362c', '9999') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( 'd6142c6e287544ae82a917ed37b4362c', '9999') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( 'd6142c6e287544ae82a917ed37b4362c') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( 'd6142c6e287544ae82a917ed37b4362c') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( 'd6142c6e287544ae82a917ed37b4362c') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( 'd6142c6e287544ae82a917ed37b4362c') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+					<tr class=" ">
+						<td width="30px "> 
+								<input id="chk" name="chk" type="checkbox" datetype='checkbox' />
+						</td>
+						<td width="25% "> 
+								tttt 
+						</td>
+						<td width="25% ">ttt</td>
+						<td width="25% ">tttt</td>
+						<td width="25% ">西安协同时光软件</td>
+						<td width="40px " align="left ">
+						      
+								
+								
+								         启用
+								
+							
+						</td>
+						<td width="80px ">
+						   
+						    <a href="javascript:edit( '45e3bc1c24c44857a3508050100b8b3e') " title="编辑 "><span class="label label-sm label-success "><i class="fa fa-edit "></i></span></a>
+						   
+						   
+							   <a href="javascript:deleteById( '45e3bc1c24c44857a3508050100b8b3e') " title="删除 ">
+									<span class="label label-sm label-danger "><i class="fa fa-trash "></i></span>
+							   </a>
+						   
+						   
+							   <a href="javascript:view( '45e3bc1c24c44857a3508050100b8b3e') " title="查看 ">
+									<span class="label label-sm "><i class="fa fa-link "></i></span>
+							   </a>
+						   
+						</td>
+						<td width="80px ">
+							
+						  	 <a href="javascript:viewUserResource( '45e3bc1c24c44857a3508050100b8b3e', 'ttt') ">查看</a>
+						  	
+						  	
+						  	 <a href="javascript:userRoleSetRole( '45e3bc1c24c44857a3508050100b8b3e', 'ttt') ">设置</a>
+						  	
+						</td>
+						<td width="140px ">
+							
+						   		<a href="javascript:setUserGroup( '45e3bc1c24c44857a3508050100b8b3e') ">用户组</a>
+						   	
+						   	
+						   		<a href="javascript:resetPwd( '45e3bc1c24c44857a3508050100b8b3e') ">重置密码</a>
+						   	
+						   <!-- 
+						   <a href="javascript:resumeUser( '45e3bc1c24c44857a3508050100b8b3e') ">启用</a>
+						   -->
+						   
+								
+								
+								   
+								    <a href="javascript:stopUser( '45e3bc1c24c44857a3508050100b8b3e') ">停用</a>
+								   
+								
+							
+						</td>
+					</tr>
+				
+		
+		</table>
+
+
+
+<div class="row ">
+	<div class="col-xs-6 ">
+		共有
+		<code>441</code>
+		条记录，每页 <select id="pageSize " name="pageSize " onchange="jumpPage( '1') " class="input-sm ">
+			
+				<option value="1 ">1</option>
+			
+				<option value="12 ">12</option>
+			
+				<option value="15 " selected=" ">15</option>
+			
+				<option value="20 ">20</option>
+			
+				<option value="30 ">30</option>
+			
+				<option value="50 ">50</option>
+			
+				<option value="100 ">100</option>
+			
+				<option value="200 ">200</option>
+			
+		</select> 条
+
+	</div>
+	<div class="col-xs-6 ">
+		<ul class="list-inline pull-right ">
+
+			
+			<li> <a href="javascript:void(0); ">首页</a> </li>
+			<li> <a href="javascript:void(0); ">上页</a> </li>
+			
+
+			
+			<li> <a href="javascript:jumpPage( '2'); ">下页</a> </li>
+			<li> <a href="javascript:jumpPage( '30'); ">末页</a> </li>
+			
+
+			<li>跳到
+			    <select id="gopage " name="gopage " class="input-sm " onchange="go(); ">
+						
+							<option value="1 " selected=" ">1/30</option>
+						
+							<option value="2 ">2/30</option>
+						
+							<option value="3 ">3/30</option>
+						
+							<option value="4 ">4/30</option>
+						
+							<option value="5 ">5/30</option>
+						
+							<option value="6 ">6/30</option>
+						
+							<option value="7 ">7/30</option>
+						
+							<option value="8 ">8/30</option>
+						
+							<option value="9 ">9/30</option>
+						
+							<option value="10 ">10/30</option>
+						
+							<option value="11 ">11/30</option>
+						
+							<option value="12 ">12/30</option>
+						
+							<option value="13 ">13/30</option>
+						
+							<option value="14 ">14/30</option>
+						
+							<option value="15 ">15/30</option>
+						
+							<option value="16 ">16/30</option>
+						
+							<option value="17 ">17/30</option>
+						
+							<option value="18 ">18/30</option>
+						
+							<option value="19 ">19/30</option>
+						
+							<option value="20 ">20/30</option>
+						
+							<option value="21 ">21/30</option>
+						
+							<option value="22 ">22/30</option>
+						
+							<option value="23 ">23/30</option>
+						
+							<option value="24 ">24/30</option>
+						
+							<option value="25 ">25/30</option>
+						
+							<option value="26 ">26/30</option>
+						
+							<option value="27 ">27/30</option>
+						
+							<option value="28 ">28/30</option>
+						
+							<option value="29 ">29/30</option>
+						
+							<option value="30 ">30/30</option>
+						
+				</select> 页
+			</li>
+		</ul>
+	</div>
+</div>
+		<!--分页-->
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript " src="Plugin/jquery/1.11.1/jquery.min.js "></script>
+		<script type="text/javascript " src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js "></script>
+		<script type="text/javascript " src="Plugin/iCheck/2.0/icheck.min.js "></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js "></script>
+		<script type="text/javascript " src="js/util.js "></script>
+		<!--datetime-->
+		<link rel="stylesheet " type="text/css " href="Plugin/bootstrap-datepicker/css/datepicker.css " />
+		<script src="Plugin/bootstrap-datepicker/js/bootstrap-datepicker.js " type="text/javascript "></script>
+	</body>
+
+</html>

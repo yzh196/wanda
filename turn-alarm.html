@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+			.turntable{}
+			.turntable .col-sm-6:nth-child(1){ padding-right: 5px;}
+			.turntable .col-sm-6:nth-child(2){ padding-left: 5px;}
+		</style>
+	</head>
+
+	<body>
+		<div class="container-fluid  animated fadeInDown">
+
+			<div class="row row-title">
+				<div class="pull-left">
+					<a href="alarm.html" class="label label-md label-default "><i class="fa fa-calendar animated"></i> 实时报警</a>
+					<a href="his-alarm.html" class="label label-md label-default"><i class="fa fa-clock-o animated"></i> 历史报警</a>
+					<a href="self-alarm.html" class="label label-md label-default"><i class="fa fa-pencil	 animated"></i> 报警定义</a>
+					<a href="turn-alarm.html" class="label label-md label-info"><i class="fa fa-mail-reply	 animated"></i> 报警跳转</a>
+				</div>
+				<div class="pull-right">
+					<div class="info-zone">
+						<label class="label label-md label-no ">严重报警 <span class="danger">8</span></label>
+						<label class="label label-md label-no">普通报警 <span class="info">8</span></label>
+						<label class="label label-md label-no">一般报警 <span class="info">8</span></label>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="table-box">
+				<div class="table-title">
+					<div class="pull-left">
+						<div class="title-icon">
+						<i class="fa fa-list-alt"></i>
+						<i class="fa fa-chevron-circle-up"></i>
+						</div>
+						<h1>报警跳转</h1>
+					</div>
+					<div class="pull-right">
+						<form action="" class="form-inline" method="post">
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" class="form-control input-sm" list="type" placeholder="报警变量选择"  />									
+								<span class="input-group-addon"><i class="fa fa-sitemap"></i></span>
+								</div>
+								<datalist id="type">
+									<option value="严重报警"></option>
+									<option value="普通报警"></option>
+									<option value="一般报警"></option>
+								</datalist>
+
+							</div>							
+						</form>
+						
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="row turntable">			
+				<div class="col-sm-6">
+					<table class="table table-bordered table-hover table-striped" >
+					<tr>
+						<th width="50" class="text-center">编号</th>
+						<th>报警级别</th>
+						<th width="50"></th>
+					</tr>
+					<tr>
+						<td class="text-center">1</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" checked="" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">2</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">2</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">2</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">2</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">2</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+				</table>
+				</div>
+				<div class="col-sm-6">
+									<table class="table table-bordered table-hover table-striped" >
+					<tr>
+						<th width="50" class="text-center">编号</th>
+						<th>报警级别</th>
+						<th width="50"></th>
+					</tr>
+					<tr>
+						<td class="text-center">1</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">2</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">3</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">4</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">5</td>
+						<td>楼控：空调K129-22</td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="text-center">6</td>
+						<td></td>
+						<td class="text-center"><input datetype="checkbox" type="checkbox" /></td>
+					</tr>
+				</table>
+				</div>
+				</div>
+			
+			</div>
+
+
+
+		</div>
+
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+	</body>
+
+</html>

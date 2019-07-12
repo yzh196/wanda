@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>欢迎访问 - 万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/base.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<script type="text/javascript">
+			window.onload = function() {
+					//定时器每秒调用一次fnDate()
+					setInterval(function() {
+						fnDate();
+					}, 1000);
+				}
+				//js 获取当前时间
+			function fnDate() {
+				var oDiv = document.getElementById("time");
+				var odate = document.getElementById("day");
+				var oweek = document.getElementById("week");
+				var date = new Date();
+				var dayNames = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+				var year = date.getFullYear();
+				var mouth = date.getMonth(); //月
+				var day = date.getDate(); //日
+				var hours = date.getHours(); //小时
+				var minute = date.getMinutes(); //分
+				var second = date.getSeconds(); //秒
+				var times = fnW(hours) + ":" + fnW(minute) + ":" + fnW(second);
+				var dates = fnW(year) + "-" + fnW(mouth + 1) + "-" + fnW(day);
+				var weeks = dayNames[new Date().getDay()];
+				oDiv.innerHTML = times;
+				odate.innerHTML = dates;
+				oweek.innerHTML = weeks;
+			}
+			//补位 当某个字段不是两位数时补0
+			function fnW(str) {
+				var num;
+				str > 9 ? num = str : num = "0" + str;
+				return num;
+			}
+		</script>
+		<style type="text/css">
+			#login {
+				background: url(images/wanda2.jpg) top no-repeat;
+				background-size: cover;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.loginbox {
+				border-top: #000 solid 1px;
+				background: rgba(0, 0, 0, .7);
+				position: fixed;
+				padding: 15px;
+				width: 100%;
+				bottom: 0px;
+			}
+			
+			.datebox {
+				color: #fff;
+				font-family: cursive;
+			}
+			
+			.datebox #time {
+				line-height: 1.2em;
+				font-size: 64px;
+				font-weight: 400;
+			}
+			
+			.datebox .pull-right {
+				font-size: 20px;
+				line-height: 1.4em;
+				margin-left: 10px;
+				padding-top: 12px;
+			}
+			
+			.datebox .pull-right p {
+				margin-bottom: 0px;
+				text-align: center;
+			}
+			
+			.datebox .pull-right p:first-child {
+				font-family: "微软雅黑"
+			}
+			
+			.userbox {
+				color: #aeaeae;
+				padding-top: 15px;
+			}
+			
+			.userbox ul {
+				margin-bottom: 0px;
+			}
+			
+			.userbox ul li {
+				cursor: pointer;
+				width: 120px;
+				font-size: 16px;
+				text-align: center;
+				vertical-align: bottom;
+			}
+			
+			.userbox ul li:hover {
+				transform: scale(1.2);
+				transition: all .3s ease-in;
+				color: #fff;
+			}
+			
+			.userbox ul li i {
+				font-size: 36px;
+				display: block;
+			}
+			
+			.userbox ul li span {
+				display: inline-block;
+				line-height: 2em;
+			}
+			
+			.input-icon {
+				position: relative;
+				border-left: 2px solid #35aa47 !important;
+			}
+			
+			.input-icon > i {
+				color: #ccc;
+				display: block;
+				position: absolute;
+				margin: 8px 2px 4px 10px;
+				z-index: 3;
+				width: 16px;
+				height: 16px;
+				font-size: 16px;
+				text-align: center;
+			}
+			
+			.input-icon .form-control {
+				border-left: 0;
+				padding-left: 33px;
+			}
+		</style>
+	</head>
+
+	<body id="login">
+
+		<div class="loginbox">
+			<div class="pull-left">
+				<div class="datebox">
+					<div id="time" class="pull-left">
+					</div>
+					<div class="pull-right">
+						<p id="week"></p>
+						<p id="day"></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="userbox pull-right">
+				<ul class="list-inline list-unstyled animated fadeInLeft">
+					<li class="animated" data-toggle="modal" data-target="#loginform"><i class="fa fa-user"></i> <span>一般用户</span></li>
+					<li class="animated" data-toggle="modal" data-target="#loginform"><i class="fa fa-user-secret"></i> <span>技术用户</span></li>
+					<li class="animated" data-toggle="modal" data-target="#loginform"><i class="fa fa-users"></i> <span>管理员</span></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="modal fade" id="loginform">
+			<div class="modal-dialog" style="margin-top: 8%;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">欢迎登陆万达demo</h4>
+					</div>
+					
+					<form action="frame.html" target="_self">
+					<div class="modal-body">						
+							<div class="form-group">
+								<label for="exampleInputEmail1">用户名</label>
+								<div class="input-icon">
+									<i class="fa fa-user"></i>
+									<input type="email" class="form-control" autofocus="autofocus" required="required" id="exampleInputEmail1" placeholder="请输入以邮箱格式的用户名">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">密码</label>
+								<div class="input-icon">
+									<i class="fa fa-lock"></i>
+									<input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入您的登录凭证">
+								</div>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> 记住登录名
+								</label>
+							</div>					
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-success btn-sm">登陆</button>
+						<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			.linebox{ margin-top: 15px;}
+			.modal-body .control-label{ line-height: 31px; padding-top: 0px; font-size: 14px;}
+			#linebox .col-sm-6:nth-child(1) .linebox{ height: 338px;}
+			#linebox .col-sm-6:nth-child(2) .linebox.box1{ height: 162px; margin-top: 7px;}
+			#linebox .col-sm-6:nth-child(2) .linebox.box2{ height: 110px;margin-top: 7px;}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="container-fluid  animated fadeInDown">
+
+			<div class="row row-title">
+				<div class="pull-left">
+					<a href="reportform.html" class="label label-md label-info "><i class="fa fa-calendar animated"></i> 生成魔板</a>
+					<a href="reportform2.html" class="label label-md label-default"><i class="fa fa-clock-o animated"></i> 生成报表</a>
+					<a href="reportform3.html" class="label label-md label-default"><i class="fa fa-pencil	 animated"></i> 报表查询</a>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+	
+			
+				<div class="table-box ">
+					<div class="row row-title">
+										<div class="col-sm-6 pull-left">
+											<div class="form-inline">
+													<!--<label class="control-label"></label>-->
+													<select id="type" class="form-control" name="type" onchange="">
+														<option value="1" selected="selected">请选择子系统</option>
+														<option value="2">所有机构1</option>
+														<option value="3">所有机构2</option>
+													</select>
+													<button class="btn btn-info btn-sm" type="submit">查询</button>											
+												<!-- /input-group -->
+											</div>
+										</div>
+
+										<div class="col-sm-6">
+											<div class="pull-right">
+												<button class="btn btn-success btn-sm" data-toggle='modal' data-target='#addpanel' type="button" >
+												<i class="fa fa-plus"></i> 新增
+											</button>
+											</div>
+										</div>
+									</div>
+									
+				<table class="table table-bordered table-hover table-striped table-condensed tabel-fixed" >
+					<tr>
+						
+						<th>编号</th>
+						<th>模板名称</th>
+						<th>子系统</th>
+						<th>实参</th>
+						<th>拓展参数</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+					
+						<td>M-1704</td>
+						<td>空调模板</td>
+						<td>制冷系统</td>
+						<td>分闸</td>
+						<td>75℃</td>
+						<td>
+
+							<a href="#" title="编辑">
+								<span class="label label-sm label-info"><i class="fa fa-pencil"></i></span>
+							</a>
+							<a href="#" title="删除">
+								<span class="label label-sm  label-danger"><i class="fa fa-trash"></i></span>
+							</a>
+							
+						</td>
+					</tr>
+					<tr>
+						<td>M-1704</td>
+						<td>空调模板</td>
+						<td>制冷系统</td>
+						<td>分闸</td>
+						<td>75℃</td>
+						<td>
+
+							<a href="#" title="编辑">
+								<span class="label label-sm label-info"><i class="fa fa-pencil"></i></span>
+							</a>
+							<a href="#" title="删除">
+								<span class="label label-sm  label-danger"><i class="fa fa-trash"></i></span>
+							</a>
+							
+						</td>
+					</tr>
+					
+				</table>
+				<div class="tabl-footer">
+				  <ul class="list-inline pull-left">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <i class="fa fa-angle-double-left"></i>
+				      </a>
+				    </li>
+				    <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+				    <li><a href="#">Page</a></li>
+				    <li><input type="text" class="form-control input-sm" /></li>
+				    <li><a href="#">of 100</a></li>
+				    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+				    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+				  </ul>
+				  <div class="pull-right">共 <span>100</span> 条数据</div>
+					<div class="clearfix"></div>
+				</div>				
+			</div>
+	
+			
+			
+			
+		</div>
+
+		<div class="modal fade modal-info" id="addpanel"  >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">添加模板</h4>
+				</div>
+				<div class="modal-body">
+					
+						
+						<form action="" method="post" class="form-horizontal" >
+							<div class="form-group">
+								<label class="control-label col-sm-2" >模板名称</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="" id="" value="" />
+							</div>
+							</div>
+						<div class="row" id="linebox">
+							
+							<div class="col-sm-6">
+								<select id="type" class="form-control" name="type" onchange="">
+									<option value="1" selected="selected">请选择子系统</option>
+									<option value="2">所有机构1</option>
+									<option value="3">所有机构2</option>
+								</select>
+								<div class="linebox mCustomScrollbar">
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox'  name="inlineRadioOptions" id="inlineRadio1" value="option1"> 设备1
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio2" value="option2"> 设备2
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio2" value="option2"> 设备3
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio2" value="option2"> 设备4
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio2" value="option2"> 设备5
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio2" value="option2"> 设备6
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio2" value="option2"> 设备7
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio2" value="option2"> 设备8
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="inlineRadio2" value="option2"> 设备9
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<label class="control-label" style="padding-top: 36px;" >实参</label>
+								<div class="linebox mCustomScrollbar box1">
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox'  name="inlineRadioOptions" id="c1" value="option1"> 参数1
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="c2" value="option2"> 参数2
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox'  name="inlineRadioOptions" id="c1" value="option1"> 参数3
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="c2" value="option2"> 参数4
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox'  name="inlineRadioOptions" id="c1" value="option1"> 参数5
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox'  name="inlineRadioOptions" id="c1" value="option1"> 参数6
+									</label>
+									
+								</div>
+								<label class="control-label" >拓展参数</label>
+								<div class="linebox mCustomScrollbar box2">
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox'  name="inlineRadioOptions" id="t1" value="option1"> 拓展参数1
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="t2" value="option2"> 拓展参数2
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox'  name="inlineRadioOptions" id="t1" value="option1"> 拓展参数1
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="t2" value="option2"> 拓展参数2
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox'  name="inlineRadioOptions" id="t1" value="option1"> 拓展参数1
+									</label>
+									<label class="checkbox">
+									  <input type="checkbox" datetype='checkbox' name="inlineRadioOptions" id="t2" value="option2"> 拓展参数2
+									</label>
+								</div>
+							</div>
+						</div>
+					</form>
+					
+					
+						
+					
+					<div class="clearfix"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info btn-sm" >生成</button>
+					<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
+				</div>
+			</div>					
+		</div>
+		</div>
+		
+		
+		
+		
+		
+									
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<!--my97date-->
+		<link rel="stylesheet" type="text/css" href="Plugin/bootstrap-datepicker/css/datepicker.css" />
+		<script src="Plugin/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
+		
+		
+		
+	</body>
+
+</html>

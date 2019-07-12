@@ -1,0 +1,533 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<link rel="stylesheet" type="text/css" href="style/iBuilding.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<div class="container-fluid animated fadeInDown">
+			<div class="row row-title">
+				<div class="pull-left">
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="javascript::">时间表配置</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="dispatch2.html">时间表任务监控</a></label>
+					<label class="label label-lg label-primary"><i class="fa fa-user animated"></i> <a href="dispatch3.html">联动配置</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="dispatch4.html">联动任务监控</a></label>
+					<label class="label label-lg label-info"><i class="fa fa-asterisk animated"></i> <a href="javascript::">模式管理</a></label>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="ztreebox">
+				<div class="row ztree-btn">
+			  <button  alert="添加任务" class="btn btn-default btn-mini" type="button"> <a href="dispatch1.html"><i class="fa fa-plus"></i> <span class="btn-text">添加任务</span> </a></button>
+		      <button   alert="添加动作" class="btn btn-default btn-mini" type="button"> <a href="dispatch5.html"><i class="fa fa-angle-double-right"></i> <span class="btn-text">添加单个动作</span></</a> </button>
+		      <button  alert="添加多个" class="btn btn-default btn-mini" type="button"> <a href="dispatch6.html"><i class="fa fa-align-left"></i> <span class="btn-text">添加多个动作</span></a></button>
+		    </div>
+				<div class="zTreeDemoBackground mCustomScrollbar">
+					<ul id="zTree" class="ztree">
+					</ul>
+				</div>
+			</div>
+			<div class="ztree-content">
+				<div class="row">
+					<ul id="myTab" class="nav nav-tabs">
+						<li class="active"><a href="#mg2" data-toggle="tab">联动配置-添加任务</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane  active" id="mg2">
+							<div class="tablebox clearfix">
+								<!-- table start -->
+
+								<div class="tablebox-con">
+									
+<form class="form-horizontal" id="mainForm" action="" method="post">
+	         <input name="id" id="id" type="hidden" value="-1">
+	         <input name="schedule" id="schedule" type="hidden" value="0">
+			
+			<!-- 
+			<div class="row button-row">
+				<div class=" pull-right" role="group">
+				    <button type="button" class="btn btn-primary btn-sm  "   onclick="addTask();">添加任务 </button>
+					<button type="button" class="btn btn-success btn-sm"  onclick="addAction('-1','-1');"  > 添加单个动作 </button>
+					<button type="button" class="btn btn-primary btn-sm"  onclick="addListAction('-1','-1');"  > 添加多个动作 </button>
+					
+				</div>
+			</div>
+			<div class="out_title">
+				
+       
+       联动配置 -新增任务
+       
+			</div>-->
+
+			<div class="out-row">
+				<label class="checkbox-inline icheck-label icheck[cwkb5]" for="enable">
+					<input type="checkbox" datetype="checkbox" />
+					<span> 启用</span>
+				</label>
+			</div>
+		
+				<table class="table table-none fixed table-condensed" style="margin-bottom:1px;">
+					<tbody><tr>
+						<td width="91" class="text-right" style="padding-right:11px;">
+							任务名称
+						</td>
+						<td width="50%">
+						<div class="required-group">
+		<span class="requ">*</span>
+							<input type="text" name="taskName" id="taskName" value="" class="form-control input-sm  validate[required,maxSize[6],ajax[checkNameCall]]">
+					</div>
+						</td>
+						<td width="91" class="text-right" style="padding-right:11px;">
+							任务描述
+						</td>
+						<td width="50%">
+							<input type="text" class="form-control input-sm   validate[maxSize[50]]" id="description" name="description" value="">
+						</td>
+
+					</tr>
+					
+					
+					
+					
+					
+					<tr>
+					
+					
+					<!-- 高级设置 -->
+						<td width="91" class="text-right" style="padding-right:11px;">
+							任务类型
+						</td>
+						<td width="50%">
+						    <select class="form-control" name="ordered" id="ordered">
+						    				        <option value="true" selected="selected">顺序型任务</option>
+						        <option value="false">无顺序型任务</option> 
+		
+						    </select>
+						</td>
+						<td width="91" class="text-right" style="padding-right:11px;">
+							优先级
+						</td>
+						<td width="50%">
+							<input type="text" class="form-control input-sm  validate[custom[onlyIntegerCustom],min[1],max[1000]]" name="priority" id="priority" value="1">
+						</td>
+
+					</tr>
+					
+					
+					
+					
+					<tr>
+						<td width="91" class="text-right" style="padding-right:11px;">
+							开始时间
+						</td>
+						<td width="50%">
+						<div class="required-group">
+		<span class="requ">*</span>
+							<input type="text" name="linkageStarterBean.startTimeStr" id="linkageStarterBeanstartTimeStr" value="" onfocus="WdatePicker({dateFmt:'HH:mm'})" class="form-control input-sm  validate[required ]">
+						</div>
+						</td>
+						<td width="91" class="text-right" style="padding-right:11px;">
+							结束时间
+						</td>
+						<td width="50%">
+						<div class="required-group">
+		<span class="requ">*</span>
+							<input type="text" class="form-control input-sm   validate[required]" name="linkageStarterBean.endTimeStr" id="linkageStarterBeanendTimeStr" value="" onfocus="WdatePicker({dateFmt:'HH:mm'})">
+						</div>
+						</td>
+					</tr>
+									
+					
+					<!--<tr>					
+					
+					 高级设置
+						<td width="91" class="text-right"  style="padding-right:11px;">
+							 <input type="checkbox"  name="linkageStarterBean.taskId"  value=""/>
+						</td>
+                        
+						<td width="50%">
+						  确认(是否需要确认以后执行)
+						</td>
+						<td width="65" class="text-right">
+						</td>
+						<td width="50%">&nbsp;
+						</td>
+
+					</tr>
+					 -->
+					
+				</tbody></table>
+			
+			<div class="bmsbox">
+				<h1 class="bmsbox-title">执行模式</h1>
+
+		            <table class="table table-none fixed table-condensed " style="width:50%; margin-bottom:-11px;">
+            <tbody><tr>
+            <td width="70" style="text-align:right">类型</td>
+            <td width="5" style="padding-right:0px;"></td>
+            <td>
+            <select class="form-control" onchange="changeMode(this);" id="linkageStarterBean.type" name="linkageStarterBean.type">
+		    <option value="0" selected="selected"> 与条件类型</option>
+			<option value="1"> 或条件类型 </option>
+			</select>
+
+          </td>
+            </tr>
+           	</tbody></table>		
+				
+			<div class="bmsbox-con">
+				
+				
+				<div class="bmsbox bmsbox-sm bmsbox-sm-botitle">
+       
+          <div class="bmsbox-con">
+          <div>
+            <table class="table table-none fixed table-condensed">
+              <tbody id="conditionTableDiv">
+              <tr>
+                <td width="64" colspan="2" class="text-right">开始条件</td>
+                <td width="50%">
+                <button type="button" class="btn btn-default  success " onclick="addCondition();"><i class="fa fa-plus"></i> 添加</button>
+                <button type="button" class="btn btn-default  danger" onclick="removeCondition();"><i class="fa fa-remove"></i> 删除</button>
+                </td>
+                <td width="100" class="text-right"></td>
+                <td width="100" class="text-right"></td>
+                               
+                 <td width="50%">  
+
+                 
+                 </td>                
+              </tr>
+              
+              <tr>              
+                <td width="30"></td>
+                <td width="24"></td>
+                <td width="50%">变量名</td>
+                <td width="100">比较符</td>
+                <td width="100" class="text-left">值</td>
+                <td width="50%" class="text-left">备注</td>
+              </tr>
+              
+              
+              
+            </tbody>
+            </table>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+			 
+			
+
+
+		
+			</div>
+			</div>
+
+							<div class="row bms-btnzone">
+			
+				<div class="col-md-6 col-xs-6">
+					<button type="button" class="btn btn-default btn-sm" onclick="saveConfig();">
+						保存
+					</button>
+					<button type="button" class="btn btn-danger btn-sm" onclick="deleteByTaskId('-1');">
+						删除
+					</button>
+					
+					<!--  
+					<button type="reset" class="btn btn-warning btn-sm"   onclick="saveConfig();">
+						恢复
+					</button>-->
+				</div>
+
+			</div>
+				<div class="clear"></div>
+				</form>								
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<!--ztree-->
+		<link rel="stylesheet" type="text/css" href="Plugin/ztree/3.5/css/zTreeStyle/zTreeStyle.css" />
+		<script src="Plugin/ztree/3.5/js/jquery.ztree.all.min.js" type="text/javascript"></script>
+		<SCRIPT type="text/javascript">
+			<!--
+			var setting = {
+				data: {
+					simpleData: {
+						enable: true
+					}
+				}
+			};
+			var zNodes = [{
+				"id": "35",
+				"name": "防盗报警10联动开灯",
+				"pId": "-1",
+				"type": "task",
+				"isParent": "false"
+			}, {
+				"id": "36",
+				"name": "防盗报警11联动开灯",
+				"pId": "-2",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "37",
+				"name": "防盗报警12联动开灯",
+				"pId": "-3",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "38",
+				"name": "防盗报警13联动开灯",
+				"pId": "-4",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "39",
+				"name": "防盗报警14联动开灯",
+				"pId": "-5",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "40",
+				"name": "防盗报警15联动开灯",
+				"pId": "-6",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "41",
+				"name": "防盗报警16联动开灯",
+				"pId": "-7",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "42",
+				"name": "防盗报警17联动开灯",
+				"pId": "-8",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "43",
+				"name": "消防报警B1F联动风机",
+				"pId": "-9",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "44",
+				"name": "消防报警1F联动风机",
+				"pId": "-10",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "45",
+				"name": "消防报警5F联动风机",
+				"pId": "-11",
+				"type": "task",
+				"isParent": "true"
+			}, {
+				"id": "46",
+				"name": "消防报警6F联动风机",
+				"pId": "-12",
+				"type": "task",
+				"isParent": "false"
+			}];
+			$(document).ready(function() {
+				$.fn.zTree.init($("#zTree"), setting, zNodes);
+			});
+			//-->
+		</SCRIPT>
+
+		<!--datetime-->
+		<link rel="stylesheet" type="text/css" href="Plugin/bootstrap-datepicker/css/bootstrap-datetimepicker.min.css" />
+		<script src="Plugin/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+		<script src="Plugin/bootstrap-datepicker/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+		
+		
+		<script type="text/javascript">
+			/**
+		 	* 添加开始条件
+		 	*/
+		 	function addCondition(){
+		 		//清除已经加载的icheck样式
+		 	   $("input:checkbox[name='startCheckbox']").icheck('destroy'); 
+		 	      var   str='   <tr   class="conditionOptionTd"  id="conditionOptionTd">'+
+				           '<td  width="35"  ></td>'+
+		                   '<td  width="24"  class="text-right" ><input type="checkbox" class="form-control  "  name="startCheckbox" /></td>'+
+		                   '<td  width="200" >'+
+		                   '   <div class="input-group input-group-sm"> '+
+		                   '      <input type="hidden"    name="s"     value="true" />'+
+		                   '      <input type="hidden" class="form-control input-sm   " readonly="readonly" name="task_tagType"  value=""    />'+
+		                   '      <input type="hidden" class="form-control input-sm  "  readonly="readonly" name="task_tagId"    value=""     />'+
+		                   '      <input type="text" class="form-control input-sm  "    readonly="readonly"  name="task_tagName"    value=""   />'+
+		                   '     <span class="input-group-addon"  onclick="selectDriver(\'setConditionTagName\');"> <i class="fa fa-sitemap "></i> </span>  '+  
+		                   '   </div>'+
+		                   ' </td>'+
+		                  '  <td  width="100" >      '+
+		                  '       <select class="form-control task_operator" name="task_operator">'+
+		                  '           <option    value="0"> &gt;</option>'+
+		                  '           <option    value="1"> &lt; </option>  '+  
+		                  '           <option     value="2"> &ge; </option>'+
+		                  '           <option     value="3"> &le; </option> '+
+		                  '           <option    value="4"> =  </option>'+
+		                   '          <option     value="5"> &ne; </option>   '+     
+		                  '       </select>'+
+		                 '   </td>'+
+		                ' <td width="20%"class="conditionTagValueTd" > <input type="text" class="form-control input-sm" name="task_tagValue" size="60" value=""/>   </td>  '+ 
+		                ' <td width="80%" > <input type="text" name="conditionTagDescription" class="form-control input-sm"  value=""/>   </td>  '+ 						
+		               ' </tr>  ';
+		 	    $("#conditionTableDiv").append(str);
+
+		 	     initICheckStyle('startCheckbox');
+		 	     resetConditionTagIndex('conditionOptionTd','conditionOptionTd');
+		 	}
+
+		 	function setConditionTagName(tagId,tagType,tagName,index,description,maxRawVal,minRawVal,right){ 
+		 	      $("#conditionOptionTd_"+index).find("input[name='task_tagId']").val(tagId);
+		 	      $("#conditionOptionTd_"+index).find("input[name='task_tagType']").val(tagType);
+		 	      $("#conditionOptionTd_"+index).find("input[name='task_tagName']").val(tagName);
+
+		 	      var rightName="";
+		 	  	   if(right==0){
+		 	  		 rightName="只读";
+		 	  	   }else{
+		 	  		 rightName="读写";
+		 	  	   }
+		 	       var tagTypeName=null;
+		 	       var tagValueObj=null;
+		 	       var  description="变量类型：";
+		 	           if(tagType==0){
+		 	        	   description+="开关量";
+		 	        	   tagValueObj='<select class="form-control input-sm " name="task_tagValue"  id="task_tagValue" >  '
+		 	        	              +"<option value='1'  >开</option>"
+		 	        	              +"<option value='0' >关</option>"
+		 	        	              +"</select>";
+		 	        	   description+=" 变量属性："+rightName;
+		 	        	 
+			               
+			                  $("option","#conditionOptionTd_"+index).each(function(){
+ 	        	                   $(this).remove(); 
+ 	                              });
+ 	               
+ 	                         $(".task_operator","#conditionOptionTd_"+index).each(function(){
+ 	        	                  $(this).append(addOperationOption(0)); 
+ 	                         });
+			               
+		 	           }else if(tagType==1){
+		 	        	   description+="整型量";
+		 	        	   description+=" 描述：最大值："+maxRawVal+"最小值："+minRawVal+" 变量属性："+rightName;
+		 	        	   tagValueObj='<input type="text" class="form-control input-sm  validate[required,custom[onlyIntegerCustom],min['+minRawVal+'],max['+maxRawVal+']]"   name="task_tagValue"  id="task_tagValue"  value="" />';
+			                $("option","#conditionOptionTd_"+index).each(function(){
+ 	        	                   $(this).remove(); 
+ 	                              });
+ 	               
+ 	                         $(".task_operator","#conditionOptionTd_"+index).each(function(){
+ 	        	                  $(this).append(addOperationOption(1)); 
+ 	                         });
+		 	           }else if(tagType==2){
+		 	        	   description+="浮点量";
+		 	        	   description+=" 描述：最大值："+maxRawVal+"最小值："+minRawVal+" 变量属性："+rightName;
+		 	        	   tagValueObj='<input type="text" class="form-control input-sm  validate[required,custom[onlyNumberCustom],min['+minRawVal+'],max['+maxRawVal+']]"    name="task_tagValue"  id="task_tagValue" value="" />';
+		 	        	  
+			                  $("option","#conditionOptionTd_"+index).each(function(){
+ 	        	                   $(this).remove(); 
+ 	                              });
+ 	               
+ 	                         $(".task_operator","#conditionOptionTd_"+index).each(function(){
+ 	        	                  $(this).append(addOperationOption(1)); 
+ 	                         });
+		 	           }else if(tagType==3){
+		 	        	   description+="消息量";
+		 	        	   description+=" 变量属性："+rightName;
+		 	        	   tagValueObj='<input type="text" class="form-control input-sm  validate[required,maxSize[50]]"   name="task_tagValue"  id="task_tagValue" value="" />';
+			                  $("option","#conditionOptionTd_"+index).each(function(){
+ 	        	                   $(this).remove(); 
+ 	                              });
+ 	               
+ 	                         $(".task_operator","#conditionOptionTd_"+index).each(function(){
+ 	        	                  $(this).append(addOperationOption(0)); 
+ 	                         });
+		 	       }
+		 	          
+		 	         $("#conditionOptionTd_"+index).find(".conditionTagValueTd").html(tagValueObj);
+		 	          $("#conditionOptionTd_"+index).find("input[name='conditionTagDescription']").val(description);
+		 	   
+
+
+
+
+
+
+
+		 	      
+		 	}
+		 	
+
+		 	//重置条件索引
+		 	function resetConditionTagIndex(divId,divClass){
+		 		  $("table ."+divClass).each(function(index,item){
+		 	            $(this).attr("id",divId+"_"+(index+1));
+		 	            if(divId=='conditionOptionTd'){
+		 	               $(this).find(".input-group-addon").attr("onclick","selectDriver('setConditionTagName','"+(index+1)+"')");
+		 	            }else{
+		 	               $(this).find(".input-group-addon").attr("onclick","selectDriver('setConditionTagName','"+(index+1)+"')");
+		 	            }
+		  	           
+		 	      });
+		 	}
+
+		 	/**
+		 	  *
+		 	  * 删除开始条件
+		 	  ***/
+		 	function removeCondition(){
+		 	    $("input:checkbox[name='startCheckbox']").each(function (){
+		 	           if(this.checked){
+		 	               $(this).parent().parent().parent().remove();
+		 	               resetConditionTagIndex('conditionOptionTd','conditionOptionTd');
+		 	           }
+		 	    });
+		 	}
+
+
+			/**
+		 	初始化icheck样式
+		 	**/
+		 	function initICheckStyle(name){
+		        $("input:checkbox[name='"+name+"']").icheck({
+		      		checkboxClass : "icheckbox_minimal-grey",
+		      		radioClass : "iradio_minimal-grey",
+		      		increaseArea : "10%" // optional
+		      	});
+		  }
+		 	
+			</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>万达demo</title>
+		<link href="Plugin/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/Font-Awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="Plugin/iCheck/2.0/minimal/grey.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.css">
+		<link href="style/animate.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="style/public.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="container-fluid animated fadeInDown">
+
+			<div class="row row-title equipment-title">
+				<div class="pull-right">
+					<label class="label label-lg label-info "><i class="fa fa-list animated"></i> 设备列表</label>
+					<label class="label label-lg label-default "><i class="fa fa-sitemap animated"></i> 系统结构图</label>
+					<label class="label label-lg label-default "><i class="fa fa-table animated"></i> 系统平面图</label>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="equipment-box">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<label class="label label-sm label-info pull-right shake">保存</label>
+								<h3 class="panel-title">节假日过度供冷</h3>
+							</div>
+							<div class="panel-body">
+								<div class="equipment-info">
+									<ul class="list-unstyled list-inline">
+										<li>总台数<span>27</span></li>
+										<li>开启台数<span>27</span></li>
+										<li>故障台数<span class="danger">27</span></li>
+										<li>远程控制台数<span class="danger">27</span></li>
+										<li>本地控制台数<span>27</span></li>
+									</ul>
+								</div>
+								<div class="equipment-table">
+									<ul class="list-unstyled list-inline">
+										<li>启停设定
+											<span>
+						    			<select class="form-control">
+						    				<option>开启</option>
+						    				<option>停止</option>
+						    			</select>
+						    			</span>
+										</li>
+										<li>送风温度限制
+											<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+											<input type="text" class="form-control" value="18">
+								</div>
+								</span>
+								</li>
+								<li>季节设定
+									<span>
+						    			<select class="form-control">
+						    				<option>春季</option>
+						    				<option>夏季</option>
+						    				<option>秋季</option>
+						    				<option>冬季</option>
+						    			</select>
+						    			</span>
+								</li>
+								<li>回风温度设定
+									<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+									<input type="text" class="form-control" value="22.6">
+							</div>
+							</span>
+							</li>
+							<li>运行模式
+								<span>
+						    			<select class="form-control">
+						    				<option>早日夏季供冷</option>
+						    				<option>早日冬季供热</option>
+						    			</select>
+						    			</span>
+							</li>
+							<li>回风CO2浓度设定
+								<span>
+						    			<div class="input-icon">
+											<span>ppm</span>
+								<input type="number" class="form-control" value="500">
+						</div>
+						</span>
+						</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<label class="label label-sm label-info pull-right shake">保存</label>
+					<h3 class="panel-title">新风机组</h3>
+				</div>
+				<div class="panel-body">
+					<div class="equipment-info">
+						<ul class="list-unstyled list-inline">
+							<li>总台数<span>27</span></li>
+							<li>开启台数<span>27</span></li>
+							<li>故障台数<span class="danger">27</span></li>
+							<li>远程控制台数<span class="danger">27</span></li>
+							<li>本地控制台数<span>27</span></li>
+						</ul>
+					</div>
+					<div class="equipment-table">
+						<ul class="list-unstyled list-inline">
+							<li>启停设定
+								<span>
+						    			<select class="form-control">
+						    				<option>开启</option>
+						    				<option>停止</option>
+						    			</select>
+						    			</span>
+							</li>
+							<li>送风温度限制
+								<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+								<input type="text" class="form-control" value="18">
+					</div>
+					</span>
+					</li>
+					<li>季节设定
+						<span>
+						    			<select class="form-control">
+						    				<option>春季</option>
+						    				<option>夏季</option>
+						    				<option>秋季</option>
+						    				<option>冬季</option>
+						    			</select>
+						    			</span>
+					</li>
+					<li>回风温度设定
+						<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+						<input type="text" class="form-control" value="22.6">
+				</div>
+				</span>
+				</li>
+				<li>运行模式
+					<span>
+						    			<select class="form-control">
+						    				<option>早日夏季供冷</option>
+						    				<option>早日冬季供热</option>
+						    			</select>
+						    			</span>
+				</li>
+
+			</ul>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<label class="label label-sm label-info pull-right shake">保存</label>
+					<h3 class="panel-title">吊装式空调机组</h3>
+				</div>
+				<div class="panel-body">
+					<div class="equipment-info">
+						<ul class="list-unstyled list-inline">
+							<li>总台数<span>27</span></li>
+							<li>开启台数<span>27</span></li>
+							<li>故障台数<span class="danger">27</span></li>
+							<li>远程控制台数<span class="danger">27</span></li>
+							<li>本地控制台数<span>27</span></li>
+						</ul>
+					</div>
+					<div class="equipment-table">
+						<ul class="list-unstyled list-inline">
+							<li>启停设定
+								<span>
+						    			<select class="form-control">
+						    				<option>开启</option>
+						    				<option>停止</option>
+						    			</select>
+						    			</span>
+							</li>
+							<li>送风温度限制
+								<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+								<input type="text" class="form-control" value="18">
+					</div>
+					</span>
+					</li>
+					<li>季节设定
+						<span>
+						    			<select class="form-control">
+						    				<option>春季</option>
+						    				<option>夏季</option>
+						    				<option>秋季</option>
+						    				<option>冬季</option>
+						    			</select>
+						    			</span>
+					</li>
+					<li>回风温度设定
+						<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+						<input type="text" class="form-control" value="22.6">
+				</div>
+				</span>
+				</li>
+
+			</ul>
+		</div>
+		</div>
+		</div>
+
+		</div>
+		<div class="col-sm-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<label class="label label-sm label-info pull-right shake">保存</label>
+					<h3 class="panel-title">风机盘管</h3>
+				</div>
+				<div class="panel-body">
+					<div class="equipment-info">
+						<ul class="list-unstyled list-inline">
+							<li>总台数<span>27</span></li>
+							<li>开启台数<span>27</span></li>
+							<li>故障台数<span class="danger">27</span></li>
+							<li>远程控制台数<span class="danger">27</span></li>
+							<li>本地控制台数<span>27</span></li>
+						</ul>
+					</div>
+					<div class="equipment-table">
+						<ul class="list-unstyled list-inline">
+							<li>启停设定
+								<span>
+						    			<select class="form-control">
+						    				<option>开启</option>
+						    				<option>停止</option>
+						    			</select>
+						    			</span>
+							</li>
+							<li>送风温度限制
+								<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+								<input type="text" class="form-control" value="18">
+					</div>
+					</span>
+					</li>
+					<li>季节设定
+						<span>
+						    			<select class="form-control">
+						    				<option>春季</option>
+						    				<option>夏季</option>
+						    				<option>秋季</option>
+						    				<option>冬季</option>
+						    			</select>
+						    			</span>
+					</li>
+					<li>回风温度设定
+						<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+						<input type="text" class="form-control" value="22.6">
+				</div>
+				</span>
+				</li>
+				<li>运行模式
+					<span>
+						    			<select class="form-control">
+						    				<option>早日夏季供冷</option>
+						    				<option>早日冬季供热</option>
+						    			</select>
+						    			</span>
+				</li>
+				<li>回风CO2浓度设定
+					<span>
+						    			<div class="input-icon">
+											<span>ppm</span>
+					<input type="number" class="form-control" value="500">
+			</div>
+			</span>
+			</li>
+			</ul>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<label class="label label-sm label-info pull-right shake">保存</label>
+					<h3 class="panel-title">送风机</h3>
+				</div>
+				<div class="panel-body">
+					<div class="equipment-info">
+						<ul class="list-unstyled list-inline">
+							<li>总台数<span>27</span></li>
+							<li>开启台数<span>27</span></li>
+							<li>故障台数<span class="danger">27</span></li>
+							<li>远程控制台数<span class="danger">27</span></li>
+							<li>本地控制台数<span>27</span></li>
+						</ul>
+					</div>
+					<div class="equipment-table">
+						<ul class="list-unstyled list-inline">
+							<li>启停设定
+								<span>
+						    			<select class="form-control">
+						    				<option>开启</option>
+						    				<option>停止</option>
+						    			</select>
+						    			</span>
+							</li>
+							<li>送风温度限制
+								<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+								<input type="text" class="form-control" value="18">
+					</div>
+					</span>
+					</li>
+
+			</ul>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<label class="label label-sm label-info pull-right shake">保存</label>
+					<h3 class="panel-title">排风机</h3>
+				</div>
+				<div class="panel-body">
+					<div class="equipment-info">
+						<ul class="list-unstyled list-inline">
+							<li>总台数<span>27</span></li>
+							<li>开启台数<span>27</span></li>
+							<li>故障台数<span class="danger">27</span></li>
+							<li>远程控制台数<span class="danger">27</span></li>
+							<li>本地控制台数<span>27</span></li>
+						</ul>
+					</div>
+					<div class="equipment-table">
+						<ul class="list-unstyled list-inline">
+							<li>启停设定
+								<span>
+						    			<select class="form-control">
+						    				<option>开启</option>
+						    				<option>停止</option>
+						    			</select>
+						    			</span>
+							</li>
+							<li>送风温度限制
+								<span>
+						    			<div class="input-icon">
+											<span>℃</span>
+								<input type="text" class="form-control" value="18">
+					</div>
+					</span>
+					</li>
+
+			</ul>
+		</div>
+		</div>
+		</div>
+
+		</div>
+		</div>
+		</div>
+
+		</div>
+		<script type="text/javascript" src="Plugin/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="Plugin/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="Plugin/iCheck/2.0/icheck.min.js"></script>
+		<script src="Plugin/mCustomScrollbar/3.1.11/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+	</body>
+
+</html>
